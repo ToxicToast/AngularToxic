@@ -1,0 +1,7 @@
+<toxic-layout-container>
+    <toxic-loading [loading]="loading$ | async"></toxic-loading>
+    <toxic-error [error]="error$ | async" [errorMessage]="errorMessage$ | async"></toxic-error>
+    <toxic-last-post-hero [loaded]="loaded$ | async" [error]="error$ | async" [lastPost]="lastPost$ | async"></toxic-last-post-hero>
+    <toxic-posts-toolbar [loaded]="loaded$ | async" [posts]="posts$ | async" [categories]="categories$ | async" [selectedCategory]="selectedCategory$ | async" (clickedCategory)="onClickedCategory($event)"></toxic-posts-toolbar>
+    <toxic-posts-list [loaded]="loaded$ | async" [posts]="posts$ | async" [category]="selectedCategory$ | async" (eventRefresh)="onRefresh()"></toxic-posts-list>
+</toxic-layout-container>

@@ -1,0 +1,19 @@
+<div class="nav navbar-right">
+    <ul>
+        <li class="dropdown dropdown-profile">
+            <a (click)="onDropdown()">
+                <img src="/assets/img/user/avatar-sm.jpg">
+                <span>{{ user?.username }}</span>
+            </a>
+            <div [class]="dropdownClass()">
+                <a href="#" class="dropdown-item">
+                    <i class="fa fa-user"></i> Profile
+                </a>
+                <div class="dropdown-divider"></div>
+                <a (click)="onLogout()" class="dropdown-item">
+                    <i class="fa fa-sign-out"></i> Logout
+                </a>
+            </div>
+        </li>
+    </ul>
+</div>

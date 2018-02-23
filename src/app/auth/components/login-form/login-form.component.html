@@ -1,0 +1,40 @@
+<section class="bg-image bg-image-sm loginBackground">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-8 col-md-4 mx-auto">
+                <div class="card m-b-0">
+                    <div class="card-header">
+                        <h4 class="card-title"><i class="fa fa-sign-in"></i> Login to your account</h4>
+                    </div>
+                    <div class="card-block">
+                        <a class="btn btn-social btn-twitch btn-block btn-icon-left" role="button" href="#"><i class="fa fa-twitch"></i> Connect with Twitch</a>
+                        <div class="divider">
+                            <span>or</span>
+                        </div>
+                        <form [formGroup]="loginForm">
+                            <div class="form-group input-icon-left m-b-10">
+                                <i class="fa fa-user"></i>
+                                <input type="email" class="form-control form-control-secondary" placeholder="Email" formControlName="email" autocomplete="email">
+                            </div>
+                            <div class="form-group input-icon-left m-b-15">
+                                <i class="fa fa-lock"></i>
+                                <input type="password" class="form-control form-control-secondary" placeholder="Password" formControlName="password" autocomplete="current-password">
+                            </div>
+                            <label class="custom-control custom-checkbox custom-checkbox-primary">
+                          <input type="checkbox" class="custom-control-input" formControlName="remember">
+                          <span class="custom-control-indicator"></span>
+                          <span class="custom-control-description">Remember me</span>
+                        </label>
+                            <button class="btn btn-primary btn-block m-t-10" [disabled]="loginButtonDisabled" (click)="saveForm()">{{ loginButtonText }} <i [class]="loginButtonIcon"></i></button>
+                        </form>
+                        <div class="divider">
+                            <span>Don't have an account?</span>
+                        </div>
+                        <a [routerLink]="['/auth/register']" class="btn btn-secondary btn-block" role="button">Register</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

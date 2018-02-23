@@ -1,0 +1,10 @@
+<section class="hero" *ngIf="loaded && !error && lastPost && lastPost.title" [style]="getBackground(lastPost)">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="hero-block">
+            <h2 class="hero-title">{{ lastPost?.title }}</h2>
+            <p>{{ lastPost?.intro }}</p>
+            <a routerLink="/blog/{{lastPost?.id}}" class="btn btn-primary btn-lg btn-shadow btn-md btn-rounded" role="button">Read More</a>
+        </div>
+    </div>
+</section>

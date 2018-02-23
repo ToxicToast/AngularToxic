@@ -1,0 +1,56 @@
+<div id="comments" class="comments anchor" *ngIf="!loading">
+    <div class="comments-header">
+        <h5>
+            <i class="fa fa-comment-o m-r-5"></i> Comments ({{ comments?.length }})
+        </h5>
+    </div>
+    <ul *ngIf="comments && comments.length > 0; else noContentTemplate">
+        <li *ngFor="let comment of comments">
+            <div class="comment">
+                <div class="comment-avatar">
+                    <a href="#"><img src="/assets/img/user/user-1.jpg" alt=""></a>
+                </div>
+                <div class="comment-post">
+                    <div class="comment-header">
+                        <div class="comment-author">
+                            <h5>
+                                <a href="#">{{ comment.user.username }}</a>
+                                <span class="badge badge-outline-primary">{{ comment.user.rang }}</span>
+                            </h5>
+                        </div>
+                        <div class="comment-action">
+                            <div class="comment-action">
+                                <div class="dropdown float-right">
+                                    <a data-toggle="dropdown" (click)="dropDownActions()">
+                                        <i class="fa fa-chevron-down"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" [style]="dropDownStyles()">
+                                        <a class="dropdown-item" href="#">Moderate</a>
+                                        <a class="dropdown-item" href="#">Embed</a>
+                                        <a class="dropdown-item" href="#">Report</a>
+                                        <a class="dropdown-item" href="#">Mark as spam</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p>{{ comment.text }}</p>
+                    <div class="comment-footer">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-clock-o"></i> {{ comment.date }}</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <ng-template #noContentTemplate>
+        <br />
+        <toxic-warning></toxic-warning>
+    </ng-template>
+</div>
+
+<div id="comments" class="comments anchor" *ngIf="loading">
+    <toxic-loading [loading]="loading"></toxic-loading>
+    <br>
+</div>

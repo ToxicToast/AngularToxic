@@ -1,0 +1,35 @@
+<toxic-breadcrumbs [breadcrumbs]="breadcrumbs" *ngIf="loaded && !error"></toxic-breadcrumbs>
+<section *ngIf="loaded && !error">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-1 hidden-md-down">
+                <!-- widget share
+                <div class="widget widget-share" data-fixed="widget">
+                    <div class="widget-block">
+                        <a class="btn btn-social btn-facebook btn-circle" href="#" data-toggle="tooltip" title="" data-placement="right" role="button" data-original-title="Share on Facebook"><i class="fa fa-facebook"></i></a>
+                        <a class="btn btn-social btn-twitter btn-circle" href="#" data-toggle="tooltip" title="" data-placement="right" role="button" data-original-title="Share on Twitter"><i class="fa fa-twitter"></i></a>
+                        <a class="btn btn-social btn-google-plus btn-circle" href="#" data-toggle="tooltip" title="" data-placement="right" role="button" data-original-title="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
+                    </div>
+                </div>-->
+            </div>
+            <div class="col-lg-10">
+                <!-- post -->
+                <div class="post post-single">
+                    <h2 class="post-title">
+                        {{ post?.title }}
+                    </h2>
+                    <div class="post-meta">
+                        <span><i class="fa fa-clock-o"></i> {{ post?.date }} by <a href="#">{{ post?.user.username }}</a></span>
+                        <span><a href="#comments"><i class="fa fa-comment-o"></i> {{ post?.comments }} comments</a></span>
+                    </div>
+                    <div class="post-thumbnail">
+                        <img [src]="post?.image" [alt]="post?.title">
+                    </div>
+                    <p>{{ post?.text }}</p>
+                </div>
+                <toxic-posts-comments *ngIf="loaded && !error" [comments]="comments" [loading]="commentsLoading"></toxic-posts-comments>
+                <toxic-write-comments *ngIf="loaded && !error" [postId]="post?.id" (saveComment)="onSaveComment($event)"></toxic-write-comments>
+            </div>
+        </div>
+    </div>
+</section>

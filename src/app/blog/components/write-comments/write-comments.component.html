@@ -1,0 +1,7 @@
+<h5>Leave a comment</h5>
+<form [formGroup]="commentForm">
+    <div class="form-group">
+        <textarea class="form-control" rows="5" placeholder="Your Comment" formControlName="comment"></textarea>
+    </div>
+    <button (click)="onSaveComment()" class="btn btn-primary" [disabled]="!commentForm.valid || buttonDisabled">{{ buttonText }} <i [class]="buttonIcon"></i></button>
+</form>

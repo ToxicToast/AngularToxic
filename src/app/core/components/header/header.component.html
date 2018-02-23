@@ -1,0 +1,118 @@
+<header id="header">
+    <div class="container">
+        <div class="navbar-backdrop">
+            <div class="navbar">
+                <div class="navbar-left">
+                    <a class="navbar-toggle">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <a href="#" class="logo">
+                        <img src="/assets/img/logo.png" alt="ToxicToast - Ein etwas, anderer Blog">
+                    </a>
+                    <nav class="nav">
+                        <ul>
+                            <li>
+                                <a [routerLink]="['/']">Home</a>
+                            </li>
+                            <li class="has-dropdown">
+                                <a>Infotainment</a>
+                                <ul>
+                                    <li>
+                                        <a [routerLink]="['/blog']">Posts</a>
+                                    </li>
+                                    <li>
+                                        <a [routerLink]="['/blog/archive/']">Archive</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">ToxicToast</a>
+                            </li>
+                            <li class="has-dropdown mega-menu mega-games">
+                                <a href="#">Games</a>
+                                <ul>
+                                    <li>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col" title="Warcraft">
+                                                    <div class="img">
+                                                        <a href="#">
+                                                            <img src="/assets/img/games/warcraft.jpg" alt="World of Warcraft">
+                                                        </a>
+                                                        <span class="badge badge-pc">PC</span>
+                                                    </div>
+                                                    <h4>
+                                                        <a href="#">World of Warcraft: Legion</a>
+                                                    </h4>
+                                                </div>
+                                                <div class="col" title="Heroes">
+                                                    <div class="img">
+                                                        <a href="#">
+                                                            <img src="/assets/img/games/heroes.jpg" alt="Heroes of the Storm">
+                                                        </a>
+                                                        <span class="badge badge-pc">PC</span>
+                                                    </div>
+                                                    <h4>
+                                                        <a href="#">Heroes of the Storm</a>
+                                                    </h4>
+                                                </div>
+                                                <div class="col" title="Starcraft">
+                                                    <div class="img">
+                                                        <a href="#">
+                                                            <img src="/assets/img/games/starcraft.jpg" alt="Starcraft 2">
+                                                        </a>
+                                                        <span class="badge badge-pc">PC</span>
+                                                    </div>
+                                                    <h4>
+                                                        <a href="#">Starcraft 2: Legacy of the Void</a>
+                                                    </h4>
+                                                </div>
+                                                <div class="col" title="Overwatch">
+                                                    <div class="img">
+                                                        <a href="#">
+                                                            <img src="/assets/img/games/overwatch.jpg" alt="Overwatch">
+                                                        </a>
+                                                        <span class="badge badge-pc">PC</span>
+                                                    </div>
+                                                    <h4>
+                                                        <a href="#">Overwatch</a>
+                                                    </h4>
+                                                </div>
+                                                <div class="col" title="Minecraft">
+                                                    <div class="img">
+                                                        <a href="#">
+                                                            <img src="/assets/img/games/minecraft.jpg" alt="Minecraft">
+                                                        </a>
+                                                        <span class="badge badge-pc">PC</span>
+                                                    </div>
+                                                    <h4>
+                                                        <a href="#">Minecraft</a>
+                                                    </h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a [routerLink]="['/users']">Community</a>
+                            </li>
+                            <li>
+                                <a href="#">Multimedia</a>
+                            </li>
+                            <li>
+                                <a href="#">Livestream</a>
+                            </li>
+                            <li>
+                                <a href="#">Social</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <toxic-login *ngIf="!user?.username"></toxic-login>
+                <toxic-logged *ngIf="user?.username" [user]="user"></toxic-logged>
+            </div>
+        </div>
+        <div class="navbar-search"></div>
+    </div>
+</header>

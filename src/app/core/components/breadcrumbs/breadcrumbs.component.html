@@ -1,0 +1,11 @@
+<section class="breadcrumbs">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li *ngFor="let breadcrumb of breadcrumbs" [class]="isActive(breadcrumb)">
+                <a (click)="routeLink(breadcrumb)">
+                  {{ breadcrumb.title  }}
+                </a>
+            </li>
+        </ol>
+    </div>
+</section>

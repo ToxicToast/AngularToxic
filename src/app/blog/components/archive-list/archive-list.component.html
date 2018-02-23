@@ -1,0 +1,38 @@
+<toxic-breadcrumbs [breadcrumbs]="breadcrumbs" *ngIf="loaded && !error"></toxic-breadcrumbs>
+
+<section *ngIf="loaded">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- post -->
+                <div *ngIf="posts && posts.length > 0; else noContentTemplate">
+                    <div class="post post-md" *ngFor="let post of posts">
+                        <div class="post-thumbnail">
+                            <a [routerLink]="['/blog', post?.id]">
+                                <img [src]="post.image">
+                            </a>
+                        </div>
+                        <div class="post-block">
+                            <h2 class="post-title">
+                                <a [routerLink]="['/blog', post?.id]">{{ post.title }}</a>
+                            </h2>
+                            <div class="post-meta">
+                                <span><i class="fa fa-clock-o"></i> {{ post.date }} by <a href="#">{{ post.user.username }}</a></span>
+                                <span><a [routerLink]="['/blog', post?.id]"><i class="fa fa-comment-o"></i> {{ post.comments }} comments</a></span>
+                            </div>
+                            <p>{{ post.intro }}</p>
+                        </div>
+                    </div>
+                </div>
+                <ng-template #noContentTemplate>
+                    <toxic-warning></toxic-warning>
+                </ng-template>
+            </div>
+
+            <!-- sidebar -->
+            <div class="col-lg-4">
+                Sidebar
+            </div>
+        </div>
+    </div>
+</section>

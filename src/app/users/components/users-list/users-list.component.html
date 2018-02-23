@@ -1,0 +1,33 @@
+<section class="p-t-30">
+    <div class="container">
+        <div class="row" *ngIf="users && users.length > 0; else noContentTemplate">
+            <div class="col-12 col-sm-6 col-md-4" *ngFor="let user of users">
+                <div class="card card-lg">
+                    <div class="card-img">
+                        <a href="#">
+                            <img src="/assets/img/game/game-1.jpg" class="card-img-top">
+                        </a>
+                    </div>
+                    <div class="card-block">
+                        <h4 class="card-title">
+                            <a href="#">{{ user?.username }}</a>
+                        </h4>
+                        <div class="card-meta">
+                            <span>{{ user?.date }}</span>
+                        </div>
+                        <p class="card-text">
+                            {{ user?.about }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ng-template #noContentTemplate>
+            <div class="row">
+                <div class="col-12">
+                    <toxic-warning></toxic-warning>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</section>

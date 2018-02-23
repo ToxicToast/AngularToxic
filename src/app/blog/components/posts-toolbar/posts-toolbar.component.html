@@ -1,0 +1,8 @@
+<div id="sticky-wrapper" class="sticky-wrapper" style="height: 69px;" *ngIf="loaded">
+    <section class="toolbar toolbar-links" data-fixed="true">
+        <div class="container">
+            <h5 class="m-r-30">Recent Blogs ({{ posts?.length }})</h5>
+            <toxic-category-toolbar [categories]="categories" [selectedCategory]="selectedCategory" (clickedCategory)="onClickedCategory($event)"></toxic-category-toolbar>
+        </div>
+    </section>
+</div>

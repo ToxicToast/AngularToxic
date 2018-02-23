@@ -1,0 +1,8 @@
+<ul class="toolbar-nav hidden-sm-down">
+    <li *ngFor="let defaultCategory of defaultCategories" [class]="isActive(defaultCategory)">
+        <a (click)="onClickedCategory(defaultCategory.id)">{{ defaultCategory?.title }}</a>
+    </li>
+    <li *ngFor="let category of categories" [class]="isActive(category)">
+        <a (click)="onClickedCategory(category.id)">{{ category.title }}</a>
+    </li>
+</ul>
