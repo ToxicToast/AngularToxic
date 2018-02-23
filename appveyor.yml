@@ -1,0 +1,27 @@
+image: Visual Studio 2017
+
+environment:
+  nodejs_version: "6"
+
+platform:
+  - x64
+
+branches:
+  only:
+  - master
+
+install:
+  - ps: Install-Product node $env:nodejs_version
+  - yarn install --no-progress
+
+test_script:
+  - yarn ng -- build --prod --aot --no-progress
+  - yarn test -- --single-run --no-progress
+  - yarn lint
+
+build:
+  verbosity: minimal
+
+cache:
+  - node_modules -> yarn.lock
+  - "%LOCALAPPDATA%/Yarn
