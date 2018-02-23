@@ -9,6 +9,7 @@ import { DomSanitizer, SafeResourceUrl, SafeUrl, SafeHtml, SafeStyle } from '@an
 export class PostsCommentsComponent implements OnInit {
 
   dropdownOpen = false;
+  logged = false;
 
   @Input() comments: any[];
   @Input() loading: boolean;
