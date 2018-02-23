@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
 import { Store } from '@ngrx/store';
@@ -25,8 +24,7 @@ export class BlogIndexContainerComponent implements OnInit {
 
 
   constructor(
-    private store: Store<fromBlog.State>,
-    private router: Router
+    private store: Store<fromBlog.State>
   ) {
     this.loading$ = this.store.select(fromBlog.getBlogCollectionLoading);
     this.loaded$ = this.store.select(fromBlog.getBlogCollectionLoaded);
