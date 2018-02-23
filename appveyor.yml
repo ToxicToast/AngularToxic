@@ -6,10 +6,6 @@ environment:
 platform:
   - x64
 
-branches:
-  only:
-  - master
-
 install:
   - ps: Install-Product node $env:nodejs_version
   - yarn install --no-progress
@@ -19,9 +15,12 @@ test_script:
   - yarn test -- --single-run --no-progress
   - yarn lint
 
-build:
-  verbosity: minimal
+build: off
 
 cache:
   - node_modules -> yarn.lock
-  - "%LOCALAPPDATA%/Yarn
+  - "%LOCALAPPDATA%/Yarn"
+
+branches:
+  only:
+  - master
