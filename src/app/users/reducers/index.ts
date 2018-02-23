@@ -4,11 +4,11 @@ import * as fromRoot from '../../core/reducers/index';
 import * as fromCollection from '../reducers/collection';
 
 export interface UsersState {
-	collection: fromCollection.State;
+  collection: fromCollection.State;
 }
 
 export const reducers = {
-	collection: fromCollection.reducer,
+  collection: fromCollection.reducer,
 };
 
 export interface State extends fromRoot.State {

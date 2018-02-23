@@ -10,10 +10,10 @@ import { storeLogger } from 'ngrx-store-logger';
 import * as fromRouter from '@ngrx/router-store';
 
 export interface State {
-	router: fromRouter.RouterReducerState<RouterStateUrl>;
+  router: fromRouter.RouterReducerState<RouterStateUrl>;
 }
 export const reducers: ActionReducerMap<State> = {
-	router: fromRouter.routerReducer,
+  router: fromRouter.routerReducer,
 };
 
 const developmentReducer: Function = compose(storeLogger(), combineReducers)(reducers);
@@ -26,5 +26,3 @@ export function logger(reducer: ActionReducer<State>): ActionReducer<State> {
 }
 
 export const metaReducers: MetaReducer<State>[] = !environment.production ? [logger, storeFreeze] : [];
-
-

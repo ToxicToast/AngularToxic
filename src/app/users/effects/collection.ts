@@ -28,10 +28,10 @@ export class CollectionEffects {
   ) { }
 
   @Effect()
-	loadCollection$ = this.actions.ofType(collection.UsersActionTypes.LOAD_USERS)
-		.switchMap(() => this.service.getUsers()
-			.map(data => new LoadUsersSuccess(data))
-			.catch(err => of(new LoadUsersFailure(err)))
-		);
+  loadCollection$ = this.actions.ofType(collection.UsersActionTypes.LOAD_USERS)
+  .switchMap(() => this.service.getUsers()
+  .map(data => new LoadUsersSuccess(data))
+  .catch(err => of(new LoadUsersFailure(err)))
+  );
 
 }

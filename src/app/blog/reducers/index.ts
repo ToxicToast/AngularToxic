@@ -6,15 +6,15 @@ import * as fromConfiguration from '../reducers/configuration';
 import * as fromComments from '../reducers/comments';
 
 export interface BlogState {
-	collection: fromCollection.State;
-	configuration: fromConfiguration.State;
-	comments: fromComments.State;
+  collection: fromCollection.State;
+  configuration: fromConfiguration.State;
+  comments: fromComments.State;
 }
 
 export const reducers = {
-	collection: fromCollection.reducer,
-	configuration: fromConfiguration.reducer,
-	comments: fromComments.reducer,
+  collection: fromCollection.reducer,
+  configuration: fromConfiguration.reducer,
+  comments: fromComments.reducer,
 };
 
 export interface State extends fromRoot.State {

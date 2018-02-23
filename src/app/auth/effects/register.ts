@@ -27,10 +27,9 @@ export class RegisterEffects {
   ) { }
 
   @Effect()
-		registerUser$ = this.actions.ofType(collection.AuthActionTypes.REGISTER_USER)
-		.switchMap(payload => this.service.registerUser(payload)
-			.map(data => new RegisterUserSuccess(data))
-			.catch(err => of(new RegisterUserFailure(err)))
-		);
+  registerUser$ = this.actions.ofType(collection.AuthActionTypes.REGISTER_USER)
+  .switchMap(payload => this.service.registerUser(payload)
+  .map(data => new RegisterUserSuccess(data))
+  .catch(err => of(new RegisterUserFailure(err))));
 
 }
