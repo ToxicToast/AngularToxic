@@ -30,18 +30,16 @@ export class LoginEffects {
   ) { }
 
   @Effect()
-		loginUser$ = this.actions.ofType(collection.AuthActionTypes.LOGIN_USER)
-		.switchMap(payload => this.service.loginUser(payload)
-			.map(data => new LoginUserSuccess(this.logUser(data)))
-			.catch(err => of(new LoginUserFailure(err)))
-  );
+  loginUser$ = this.actions.ofType(collection.AuthActionTypes.LOGIN_USER)
+  .switchMap(payload => this.service.loginUser(payload)
+  .map(data => new LoginUserSuccess(this.logUser(data)))
+  .catch(err => of(new LoginUserFailure(err))));
 
   @Effect()
-		loggedUser$ = this.actions.ofType(collection.AuthActionTypes.GET_LOGGED_USER_TOKEN)
-		.switchMap(payload => this.logData(payload)
-			.map(data => new GetLoggedUserWithTokenSuccess(data))
-			.catch(err => of(new GetLoggedUserWithTokenFailure(err)))
-  );
+  loggedUser$ = this.actions.ofType(collection.AuthActionTypes.GET_LOGGED_USER_TOKEN)
+  .switchMap(payload => this.logData(payload)
+  .map(data => new GetLoggedUserWithTokenSuccess(data))
+  .catch(err => of(new GetLoggedUserWithTokenFailure(err))));
 
 
 
