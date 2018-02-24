@@ -22,4 +22,4 @@ cache:
 
 branches:
   only:
-  - staging
+  - master
