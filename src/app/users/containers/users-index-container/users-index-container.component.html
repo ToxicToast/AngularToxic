@@ -1,5 +1,5 @@
 <toxic-layout-container>
     <toxic-loading [loading]="loading$ | async"></toxic-loading>
     <toxic-error [error]="error$ | async" [errorMessage]="errorMessage$ | async"></toxic-error>
-    <toxic-users-list [users]="users$ | async"></toxic-users-list>
+    <toxic-users-list [users]="users$ | async" [loaded]="loaded$ | async" [loading]="loading$ | async" [error]="error$ | async" [errorMessage]="errorMessage$ | async"></toxic-users-list>
 </toxic-layout-container>
