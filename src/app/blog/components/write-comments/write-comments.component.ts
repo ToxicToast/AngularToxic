@@ -11,6 +11,7 @@ export class WriteCommentsComponent implements OnInit {
   buttonText = 'Submit Comment';
   buttonIcon = 'fa fa-file-text-o';
   buttonDisabled = false;
+  logged = false;
 
   @Input() postId: number;
   @Output() saveComment = new EventEmitter<any>();
