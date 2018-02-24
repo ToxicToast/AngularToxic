@@ -5,6 +5,7 @@ import { CoreModule } from '../core/core.module';
 
 import { AboutRoutingModule } from './about-routing.module';
 import { AboutIndexContainerComponent } from './containers/about-index-container/about-index-container.component';
+import { AboutToxicComponent } from './components/about-toxic/about-toxic.component';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { AboutIndexContainerComponent } from './containers/about-index-container
     CoreModule
   ],
   declarations: [
-    AboutIndexContainerComponent
+    AboutIndexContainerComponent,
+    AboutToxicComponent
   ],
   exports: [
     AboutIndexContainerComponent
