@@ -1,5 +1,13 @@
-<section class="p-t-30">
+<toxic-breadcrumbs [breadcrumbs]="breadcrumbs" *ngIf="loaded && !error"></toxic-breadcrumbs>
+<section class="p-t-30" *ngIf="loaded">
     <div class="container">
+        <div class="row">
+            <div class="toolbar-custom">
+                <a class="btn btn-default btn-icon btn-sm m-r-10 float-left hidden-xs-down" (click)="refreshList()">
+                    <i class="fa fa-refresh"></i>
+                </a>
+            </div>
+        </div>
         <div class="row" *ngIf="users && users.length > 0; else noContentTemplate">
             <div class="col-12 col-sm-6 col-md-4" *ngFor="let user of users">
                 <div class="card card-lg">
