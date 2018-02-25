@@ -7,15 +7,15 @@ export class SessionStorage {
   }
 
   getItem() {
-    return localStorage.getItem(this.storageKey);
+    return sessionStorage.getItem(this.storageKey);
   }
 
   removeItem(): void {
-    localStorage.removeItem(this.storageKey);
+    sessionStorage.removeItem(this.storageKey);
   }
 
   addItem(data): void {
-    localStorage.setItem(this.storageKey, data);
+    sessionStorage.setItem(this.storageKey, data);
   }
 
   hasItem() {
