@@ -24,7 +24,7 @@
                                     <span>
                                             <i class="fa fa-clock-o"></i>
                                             {{ post.date }} by
-                                            <a href="#">{{ post.user.username }}</a>
+                                            <a href="#" [class]="getUserColor(post.user.role)">{{ post.user.username }}</a>
                                         </span>
                                     <span>
                                             <a [routerLink]="['/blog', post?.id]">

@@ -20,4 +20,12 @@ export class PostsListComponent implements OnInit {
 
   ngOnInit() { }
 
+  getUserColor(role) {
+    if (role === 'Broadcaster') {
+      return 'badge-pc-text';
+    } else {
+      return 'badge-twitch-text';
+    }
+  }
+
 }

@@ -28,4 +28,12 @@ export class UsersListComponent implements OnInit {
     console.log('refresh List');
   }
 
+  getUserColor(role) {
+    if (role === 'Broadcaster') {
+      return 'badge badge-pc';
+    } else {
+      return 'badge badge-twitch';
+    }
+  }
+
 }
