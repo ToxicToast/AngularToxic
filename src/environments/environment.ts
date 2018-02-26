@@ -7,5 +7,6 @@ export const environment = {
   production: false,
   api: {
     blog: 'http://toxicblog.local/api',
+    youtube: ''
   }
 };

@@ -1,3 +1,5 @@
-<p>
-  about-index-container works!
-</p>
+<toxic-layout-container>
+    <toxic-loading [loading]="loading$ | async"></toxic-loading>
+    <toxic-error [error]="error$ | async" [errorMessage]="errorMessage$ | async"></toxic-error>
+    <toxic-about-toxic [loaded]="loaded$ | async" [about]="about$ | async"></toxic-about-toxic>
+</toxic-layout-container>

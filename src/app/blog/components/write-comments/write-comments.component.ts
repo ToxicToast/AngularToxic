@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { SessionStorage } from '../../../core/helpers/sessionStorage';
 
 @Component({
   selector: 'toxic-write-comments',
@@ -27,6 +28,8 @@ export class WriteCommentsComponent implements OnInit {
   }
 
   ngOnInit() {
+    const storage = new SessionStorage('loggedUser');
+    this.logged = storage.hasItem();
   }
 
   onSaveComment() {

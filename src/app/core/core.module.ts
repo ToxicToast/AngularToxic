@@ -38,6 +38,9 @@ import { LoginComponent } from './components/login/login.component';
     ErrorComponent,
     WarningComponent,
     BreadcrumbsComponent
+  ],
+  providers: [
+
   ]
 })
 export class CoreModule { }

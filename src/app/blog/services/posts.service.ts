@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Headers, RequestOptions, Response } from '@angular/http';
 
 import { Store } from '@ngrx/store';
 
@@ -82,5 +83,4 @@ export class PostsService {
     const { post_id } = payload;
     this.store.dispatch(new collection.LoadComments(post_id));
   }
-
 }

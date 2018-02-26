@@ -8,5 +8,5 @@
 
 <ng-template #noContentTemplate>
     <br />
-    <toxic-warning></toxic-warning>
+    <toxic-error [error]="true" [errorMessage]="{message: 'You must be logged in to write comments.'}"></toxic-error>
 </ng-template>

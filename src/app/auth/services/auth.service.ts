@@ -44,6 +44,9 @@ export class AuthService {
   requestUserByToken(data) {
     const { payload } = data;
     const { access_token } = payload;
-    this.store.dispatch( new collection.GetLoggedUserWithToken(access_token) );
+    this.store.dispatch(new collection.GetLoggedUserWithToken(access_token));
+    //
+    const storage = new SessionStorage('loggedUser');
+    storage.addItem(access_token);
   }
 }
