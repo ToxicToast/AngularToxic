@@ -34,6 +34,6 @@ export class AuthRegisterContainerComponent implements OnInit {
   onRegister(user) {
     console.log(user);
     this.store.dispatch(new authActions.RegisterUser(user));
+    this.router.navigate(['/']);
   }
-
 }

@@ -30,6 +30,7 @@ export class AuthLoginContainerComponent implements OnInit {
 
   onLogin(user) {
     this.store.dispatch(new authActions.LoginUser(user));
+    this.router.navigate(['/']);
   }
 
 }
