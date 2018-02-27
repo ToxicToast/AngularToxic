@@ -1,14 +1,14 @@
 image: Visual Studio 2017
 
 environment:
-  nodejs_version: "6"
+  nodejs_version: "5.7.1"
 
 platform:
   - x64
 
 install:
   - ps: Install-Product node $env:nodejs_version
-  - yarn install --no-progress
+  - yarn global add npm@$env:nodejs_version --no-progress
 
 test_script:
   - yarn ng build --prod --aot --no-progress
