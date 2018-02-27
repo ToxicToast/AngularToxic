@@ -13,6 +13,7 @@ export class PostsSingleComponent implements OnInit, AfterViewChecked {
   @Input() error: boolean;
   @Input() comments: any[];
   @Input() commentsLoading: boolean;
+  @Input() loggedUser: any[];
   @Output() saveComment = new EventEmitter<any>();
   breadcrumbs = [];
   private breadcrumbsAdded = false;

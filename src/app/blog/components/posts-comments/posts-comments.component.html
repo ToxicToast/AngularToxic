@@ -15,7 +15,7 @@
                         <div class="comment-author">
                             <h5>
                                 <a href="#">{{ comment.user.username }}</a>
-                                <span class="badge badge-outline-primary">{{ comment.user.rang }}</span>
+                                <span [class]="getUserColor(comment.user.role)">{{ comment.user.role }}</span>
                             </h5>
                         </div>
                         <div class="comment-action">

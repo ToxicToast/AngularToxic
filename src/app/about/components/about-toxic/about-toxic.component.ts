@@ -12,9 +12,13 @@ export class AboutToxicComponent implements OnInit {
   @Input() error: boolean;
   @Input() errorMessage: string;
 
-  constructor() { }
+  breadcrumbs = [];
 
-  ngOnInit() {
+  constructor() {
+    this.breadcrumbs.push({ title: 'Home', link: '/', active: false });
+    this.breadcrumbs.push({ title: 'About', link: '/about', active: true });
   }
+
+  ngOnInit() { }
 
 }

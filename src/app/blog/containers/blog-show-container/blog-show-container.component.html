@@ -1,5 +1,5 @@
 <toxic-layout-container>
     <toxic-loading [loading]="loading$ | async"></toxic-loading>
     <toxic-error [error]="error$ | async" [errorMessage]="errorMessage$ | async"></toxic-error>
-    <toxic-posts-single [postId]="" [post]="posts$ | async" [loaded]="loaded$ | async" [error]="error$ | async" [comments]="comments$ | async" [commentsLoading]="commentsLoading$ | async" (saveComment)="onSaveComment($event)"></toxic-posts-single>
+    <toxic-posts-single [postId]="" [post]="posts$ | async" [loaded]="loaded$ | async" [error]="error$ | async" [comments]="comments$ | async" [commentsLoading]="commentsLoading$ | async" [loggedUser]="loggedUser$ | async" (saveComment)="onSaveComment($event)"></toxic-posts-single>
 </toxic-layout-container>

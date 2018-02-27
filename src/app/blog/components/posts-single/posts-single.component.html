@@ -28,7 +28,7 @@
                     <p>{{ post?.text }}</p>
                 </div>
                 <toxic-posts-comments *ngIf="loaded && !error" [comments]="comments" [loading]="commentsLoading"></toxic-posts-comments>
-                <toxic-write-comments *ngIf="loaded && !error" [postId]="post?.id" (saveComment)="onSaveComment($event)"></toxic-write-comments>
+                <toxic-write-comments *ngIf="loaded && !error" [postId]="post?.id" [loggedUser]="loggedUser" (saveComment)="onSaveComment($event)"></toxic-write-comments>
             </div>
         </div>
     </div>

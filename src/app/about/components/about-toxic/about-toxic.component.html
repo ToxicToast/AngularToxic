@@ -1,5 +1,29 @@
 <toxic-breadcrumbs [breadcrumbs]="breadcrumbs" *ngIf="loaded && !error"></toxic-breadcrumbs>
 
 <section *ngIf="loaded">
-    ABOUT
+    <div class="container">
+        <div class="heading">
+            <i class="fa fa-question"></i>
+            <h2>About ToxicToast</h2>
+        </div>
+        <div id="accordion" class="accordion accordion-icon" *ngIf="about && about.length > 0; else noContentTemplate">
+            <div class="card" *ngFor="let item of about; let i = index">
+                <div class="card-header">
+                    <h5>
+                        <a data-toggle="collapse" aria-expanded="false" data-index="i">
+                          {{ item?.title }}
+                        </a>
+                    </h5>
+                </div>
+                <div>
+                    <div class="card-body">
+                        {{ item?.text }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ng-template #noContentTemplate>
+            <toxic-warning></toxic-warning>
+        </ng-template>
+    </div>
 </section>

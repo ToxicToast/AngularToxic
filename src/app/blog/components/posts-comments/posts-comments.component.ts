@@ -34,4 +34,12 @@ export class PostsCommentsComponent implements OnInit {
     }
   }
 
+  getUserColor(role) {
+    if (role === 'Broadcaster') {
+      return 'badge badge-outline-pc';
+    } else {
+      return 'badge badge-outline-twitch';
+    }
+  }
+
 }

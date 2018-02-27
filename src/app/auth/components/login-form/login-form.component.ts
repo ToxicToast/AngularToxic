@@ -13,8 +13,7 @@ export class LoginFormComponent implements OnInit {
   loginButtonIcon = 'fa fa-sign-in'; // <i class="fa fa-sign-in"></i>
   loginButtonDisabled = false;
 
-  @Input() loggedUser: any[];
-
+  @Input() loggedUser: any;
   @Output() eventSave = new EventEmitter<any>();
 
   constructor(

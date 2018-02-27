@@ -47,6 +47,9 @@ export class AuthService {
     this.store.dispatch(new collection.GetLoggedUserWithToken(access_token));
     //
     const storage = new SessionStorage('loggedUser');
+    if (storage.hasItem()) {
+      storage.removeItem();
+    }
     storage.addItem(access_token);
   }
 }

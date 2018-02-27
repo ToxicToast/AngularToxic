@@ -116,3 +116,11 @@
 .badge-outline-info {
     @include badge-outline($theme-info);
 }
+
+.badge-outline-pc {
+    @include badge-outline($badge-warning-bg);
+}
+
+.badge-outline-twitch {
+    @include badge-outline($color-twitch);
+}
