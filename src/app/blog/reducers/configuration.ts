@@ -1,4 +1,4 @@
-import { BlogActionTypes, BlogActions } from '../actions/blog-actions';
+import { BlogActionTypes, BlogActions } from '@blog/actions/blog-actions';
 
 export interface State {
   page: number;

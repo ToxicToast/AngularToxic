@@ -3,10 +3,10 @@ import { HttpClient } from '@angular/common/http';
 
 import { Store } from '@ngrx/store';
 
-import { environment } from '../../../environments/environment';
+import { environment } from '@env/environment';
 
-import * as collection from '../actions/users-actions';
-import * as fromUsers from '../reducers/index';
+import * as collection from '@users/actions/users-actions';
+import * as fromUsers from '@users/reducers/index';
 
 @Injectable()
 export class UsersService {

@@ -4,8 +4,8 @@ import { Observable } from 'rxjs/Observable';
 
 import { Store } from '@ngrx/store';
 
-import * as fromUsers from '../../reducers/index';
-import * as usersActions from '../../actions/users-actions';
+import * as fromUsers from '@users/reducers/index';
+import * as usersActions from '@users/actions/users-actions';
 
 @Component({
   selector: 'toxic-users-index-container',

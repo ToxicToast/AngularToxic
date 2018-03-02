@@ -3,8 +3,8 @@ import { Observable } from 'rxjs/Observable';
 
 import { Store } from '@ngrx/store';
 
-import * as fromAbout from '../../reducers/index';
-import * as aboutActions from '../../actions/about-actions';
+import * as fromAbout from '@about/reducers/index';
+import * as aboutActions from '@about/actions/about-actions';
 
 @Component({
   selector: 'toxic-about-index-container',

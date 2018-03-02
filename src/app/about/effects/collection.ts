@@ -8,14 +8,14 @@ import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
 import { Actions, Effect } from '@ngrx/effects';
 
-import * as collection from './../actions/about-actions';
+import * as collection from '@about/actions/about-actions';
 
 import {
   LoadAboutFailure,
   LoadAboutSuccess
-} from '../actions/about-actions';
+} from '@about/actions/about-actions';
 
-import { AboutService } from '../services/about.service';
+import { AboutService } from '@about/services/about.service';
 
 @Injectable()
 export class CollectionEffects {

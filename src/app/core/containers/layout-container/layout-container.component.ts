@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
-import { SessionStorage } from '../../../core/helpers/sessionStorage';
+import { SessionStorage } from '@core/helpers/sessionStorage';
 
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 
-import * as fromRoot from '../../reducers/index';
-import * as fromAuth from '../../../auth/reducers/index';
-import * as authActions from '../../../auth/actions/auth-actions';
+import * as fromRoot from '@core/reducers/index';
+import * as fromAuth from '@auth/reducers/index';
+import * as authActions from '@auth/actions/auth-actions';
 
 
 @Component({

@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CoreModule } from '../core/core.module';
+import { CoreModule } from '@core/core.module';
 
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { reducers } from './reducers/index';
+import { reducers } from '@about/reducers/index';
 
-import { CollectionEffects } from './effects/collection';
+import { CollectionEffects } from '@about/effects/collection';
 
-import { AboutRoutingModule } from './about-routing.module';
-import { AboutIndexContainerComponent } from './containers/about-index-container/about-index-container.component';
-import { AboutToxicComponent } from './components/about-toxic/about-toxic.component';
+import { AboutRoutingModule } from '@about/about-routing.module';
+import { AboutIndexContainerComponent } from '@about/containers/about-index-container/about-index-container.component';
+import { AboutToxicComponent } from '@about/components/about-toxic/about-toxic.component';
 
-import { AboutService } from './services/about.service';
+import { AboutService } from '@about/services/about.service';
 
 @NgModule({
   imports: [

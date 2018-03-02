@@ -3,10 +3,10 @@ import { HttpClient } from '@angular/common/http';
 
 import { Store } from '@ngrx/store';
 
-import { environment } from '../../../environments/environment';
+import { environment } from '@env/environment';
 
-import * as collection from '../actions/about-actions';
-import * as fromAbout from '../reducers/index';
+import * as collection from '@about/actions/about-actions';
+import * as fromAbout from '@about/reducers/index';
 
 @Injectable()
 export class AboutService {

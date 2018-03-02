@@ -4,11 +4,11 @@ import { Observable } from 'rxjs/Observable';
 
 import { Store } from '@ngrx/store';
 
-import * as fromBlog from '../../reducers/index';
-import * as blogActions from '../../actions/blog-actions';
+import * as fromBlog from '@blog/reducers/index';
+import * as blogActions from '@blog/actions/blog-actions';
 
-import * as fromAuth from '../../../auth/reducers/index';
-import * as authActions from '../../../auth/actions/auth-actions';
+import * as fromAuth from '@auth/reducers/index';
+import * as authActions from '@auth/actions/auth-actions';
 
 @Component({
   selector: 'toxic-blog-show-container',

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { SessionStorage } from '../../../core/helpers/sessionStorage';
+import { SessionStorage } from '@core/helpers/sessionStorage';
 
 @Component({
   selector: 'toxic-write-comments',

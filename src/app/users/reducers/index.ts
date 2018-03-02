@@ -1,7 +1,7 @@
 import { createSelector, createFeatureSelector } from '@ngrx/store';
 
-import * as fromRoot from '../../core/reducers/index';
-import * as fromCollection from '../reducers/collection';
+import * as fromRoot from '@core/reducers/index';
+import * as fromCollection from '@users/reducers/collection';
 
 export interface UsersState {
   collection: fromCollection.State;

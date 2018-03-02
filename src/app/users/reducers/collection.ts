@@ -1,4 +1,4 @@
-import { UsersActionTypes, UsersActions } from '../actions/users-actions';
+import { UsersActionTypes, UsersActions } from '@users/actions/users-actions';
 
 export interface State {
   loaded: boolean;

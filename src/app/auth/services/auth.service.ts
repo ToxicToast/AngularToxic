@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { SessionStorage } from '../../core/helpers/sessionStorage';
+import { SessionStorage } from '@core/helpers/sessionStorage';
 
 import { Store } from '@ngrx/store';
 
-import { environment } from '../../../environments/environment';
+import { environment } from '@env/environment';
 
-import * as collection from '../actions/auth-actions';
-import * as fromAuth from '../reducers/index';
+import * as collection from '@auth/actions/auth-actions';
+import * as fromAuth from '@auth/reducers/index';
 
 @Injectable()
 export class AuthService {

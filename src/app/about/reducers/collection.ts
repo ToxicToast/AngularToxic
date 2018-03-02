@@ -1,4 +1,4 @@
-import { AboutActionTypes, AboutAction } from '../actions/about-actions';
+import { AboutActionTypes, AboutAction } from '@about/actions/about-actions';
 
 export interface State {
   loaded: boolean;
