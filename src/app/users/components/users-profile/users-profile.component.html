@@ -1,4 +1,4 @@
-<section class="hero hero-profile" [style]="getBackground(user.hero)" *ngIf="loaded">
+<section class="hero hero-profile" [style]="getBackground(user.hero)" *ngIf="loaded && user.role !== 'Banned'">
     <div class="overlay"></div>
     <div class="container">
         <div class="hero-block">
@@ -6,7 +6,7 @@
         </div>
     </div>
 </section>
-<div id="sticky-wrapper" class="sticky-wrapper" style="height: 69px;" *ngIf="loaded">
+<div id="sticky-wrapper" class="sticky-wrapper" style="height: 69px;" *ngIf="loaded && user.role !== 'Banned'">
     <section class="toolbar toolbar-profile" data-fixed="true">
         <div class="container">
             <div class="profile-avatar">
@@ -32,7 +32,7 @@
         </div>
     </section>
 </div>
-<section class="p-y-30" *ngIf="loaded">
+<section class="p-y-30" *ngIf="loaded && user.role !== 'Banned'">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 hidden-md-down">
@@ -41,6 +41,12 @@
                     <p>{{ user.about }}</p>
                 </div>
             </div>
+            <div class="col-lg-9">
+                <toxic-user-achievements></toxic-user-achievements>
+            </div>
         </div>
     </div>
 </section>
+<toxic-error *ngIf="loaded && user.role === 'Banned'" [error]="true" [errorMessage]="userBannedError(user.username_raw)">
+    error message goes here
+</toxic-error>

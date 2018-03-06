@@ -28,7 +28,6 @@ export class RegisterFormComponent implements OnInit {
   }
 
   saveForm() {
-    console.log(this.loading, this.loaded);
     this.registerButtonDisabled = true;
     this.registerButtonText = 'Processing...';
     this.registerButtonIcon = 'fa fa-spinner fa-spin';

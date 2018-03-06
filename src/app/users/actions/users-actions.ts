@@ -7,7 +7,13 @@ export enum UsersActionTypes {
 
   LOAD_USER = '[Blog] Load User',
   LOAD_USER_SUCCESS = '[Blog] Successfully loaded User',
-  LOAD_USER_FAILURE = '[Blog] Failed loading User'
+  LOAD_USER_FAILURE = '[Blog] Failed loading User',
+
+  REFRESH_USERS = '[Blog] Reload Users'
+}
+
+export class ReloadUsers implements Action {
+  readonly type = UsersActionTypes.REFRESH_USERS;
 }
 
 export class LoadUsers implements Action {

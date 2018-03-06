@@ -25,4 +25,8 @@ export class UsersProfileComponent implements OnInit {
   getBackground(image) {
     return this.sanitizer.bypassSecurityTrustStyle(`background-image: url("${image}")`);
   }
+
+  userBannedError(username) {
+    return { message: `The Profile of ${username} is currently not available.` };
+  }
 }
