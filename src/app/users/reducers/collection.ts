@@ -15,7 +15,7 @@ const initialState: State = {
   error: false,
   errorMessage: '',
   entities: [],
-  entity: {};
+  entity: {},
 };
 
 export function reducer(state = initialState, action: UsersActions): State {

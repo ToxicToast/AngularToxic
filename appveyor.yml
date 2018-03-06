@@ -22,4 +22,4 @@ cache:
 
 branches:
   only:
-  - master
+  - dev
