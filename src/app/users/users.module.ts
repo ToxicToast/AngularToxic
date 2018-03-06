@@ -17,6 +17,7 @@ import { UsersService } from '@users/services/users.service';
 import { UsersListComponent } from '@users/components/users-list/users-list.component';
 import { UsersShowContainerComponent } from '@users/containers/users-show-container/users-show-container.component';
 import { UsersProfileComponent } from '@users/components/users-profile/users-profile.component';
+import { UserAchievementsComponent } from './Components/user-achievements/user-achievements.component';
 
 @NgModule({
   imports: [
@@ -30,7 +31,8 @@ import { UsersProfileComponent } from '@users/components/users-profile/users-pro
     UsersIndexContainerComponent,
     UsersListComponent,
     UsersShowContainerComponent,
-    UsersProfileComponent
+    UsersProfileComponent,
+    UserAchievementsComponent
   ],
   exports: [
     UsersIndexContainerComponent,
