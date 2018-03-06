@@ -25,9 +25,10 @@ export class UsersService {
     return this.http.get(url);
   }
 
-  getUser(id) {
+  getUser(data) {
+    const { payload } = data;
     const endpoint = '/users';
-    const url = `${this.baseUrl}${endpoint}/${id}`;
+    const url = `${this.baseUrl}${endpoint}/${payload}`;
     return this.http.get(url);
   }
 

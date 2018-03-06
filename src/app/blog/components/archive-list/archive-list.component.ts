@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { UserColor } from '@core/helpers/userColor';
 
 @Component({
   selector: 'toxic-archive-list',
@@ -24,11 +25,8 @@ export class ArchiveListComponent implements OnInit {
   }
 
   getUserColor(role) {
-    if (role === 'Broadcaster') {
-      return 'badge-pc-text';
-    } else {
-      return 'badge-twitch-text';
-    }
+    const color = new UserColor();
+    return color.getUserBadgeColor(role);
   }
 
 }

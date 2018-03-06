@@ -23,3 +23,4 @@ export const getUsersCollectionLoading = createSelector(selectUsersState, (state
 export const getUsersCollectionLoaded = createSelector(selectUsersState, (state: UsersState) => state.collection.loaded);
 export const getUsersCollectionError = createSelector(selectUsersState, (state: UsersState) => state.collection.error);
 export const getUsersCollectionErrorMessage = createSelector(selectUsersState, (state: UsersState) => state.collection.errorMessage);
+export const getUsersCollectionEntity = createSelector(selectUsersState, (state: UsersState) => state.collection.entity);

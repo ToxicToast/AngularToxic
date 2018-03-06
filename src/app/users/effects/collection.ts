@@ -12,7 +12,9 @@ import * as collection from '@users/actions/users-actions';
 
 import {
   LoadUsersSuccess,
-  LoadUsersFailure
+  LoadUsersFailure,
+  LoadUserSuccess,
+  LoadUserFailure
 } from '@users/actions/users-actions';
 
 import { UsersService } from '@users/services/users.service';
@@ -32,6 +34,13 @@ export class CollectionEffects {
   .switchMap(() => this.service.getUsers()
   .map(data => new LoadUsersSuccess(data))
   .catch(err => of(new LoadUsersFailure(err)))
+  );
+
+  @Effect()
+  loadUser$ = this.actions.ofType(collection.UsersActionTypes.LOAD_USER)
+  .switchMap(payload => this.service.getUser(payload)
+  .map(data => new LoadUserSuccess(data))
+  .catch(err => of(new LoadUserFailure(err)))
   );
 
 }

@@ -7,7 +7,7 @@ export interface State {
 }
 
 const initialState: State = {
-  page: 0,
+  page: 1,
   view: 'list',
   category: 0
 };
@@ -17,6 +17,11 @@ export function reducer(state = initialState, action: BlogActions): State {
     case BlogActionTypes.CHANGE_CATEGORY: {
       return Object.assign({}, state, {
         category: action.payload
+      });
+    }
+    case BlogActionTypes.CHANGE_PAGE: {
+      return Object.assign({}, state, {
+        page: action.payload
       });
     }
     default:

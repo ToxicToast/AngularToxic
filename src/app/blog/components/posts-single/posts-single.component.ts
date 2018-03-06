@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, AfterViewChecked, Output, EventEmitter } from '@angular/core';
+import { UserColor } from '@core/helpers/userColor';
 
 @Component({
   selector: 'toxic-posts-single',
@@ -49,5 +50,10 @@ export class PostsSingleComponent implements OnInit, AfterViewChecked {
 
   onSaveComment(payload) {
     this.saveComment.emit(payload);
+  }
+
+  getUserColor(role) {
+    const color = new UserColor();
+    return color.getUserBadgeColor(role);
   }
 }

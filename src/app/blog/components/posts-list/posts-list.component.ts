@@ -23,6 +23,8 @@ export class PostsListComponent implements OnInit {
   getUserColor(role) {
     if (role === 'Broadcaster') {
       return 'badge-pc-text';
+    } else if (role === 'Bot') {
+      return 'badge-youtube-text';
     } else {
       return 'badge-twitch-text';
     }

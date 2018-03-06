@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl, SafeUrl, SafeHtml, SafeStyle } from '@angular/platform-browser';
+import { UserColor } from '@core/helpers/userColor';
 
 @Component({
   selector: 'toxic-posts-comments',
@@ -35,11 +36,8 @@ export class PostsCommentsComponent implements OnInit {
   }
 
   getUserColor(role) {
-    if (role === 'Broadcaster') {
-      return 'badge badge-outline-pc';
-    } else {
-      return 'badge badge-outline-twitch';
-    }
+    const color = new UserColor();
+    return color.getUserOutlineColor(role);
   }
 
 }

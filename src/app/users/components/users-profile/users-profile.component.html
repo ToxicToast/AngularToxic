@@ -1,0 +1,46 @@
+<section class="hero hero-profile" [style]="getBackground(user.hero)" *ngIf="loaded">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="hero-block">
+            <h5>{{user.username}}</h5>
+        </div>
+    </div>
+</section>
+<div id="sticky-wrapper" class="sticky-wrapper" style="height: 69px;" *ngIf="loaded">
+    <section class="toolbar toolbar-profile" data-fixed="true">
+        <div class="container">
+            <div class="profile-avatar">
+                <img [src]="user.image" alt="">
+            </div>
+            <ul class="toolbar-nav hidden-md-down">
+                <li class="active">
+                    <a>Profile</a>
+                </li>
+                <li>
+                    <a>Streams ({{ user.streams }})</a>
+                </li>
+                <li>
+                    <a>Comments ({{ user.comments }})</a>
+                </li>
+                <li>
+                    <a>Groups ({{ user.groups.count }})</a>
+                </li>
+                <li>
+                    <a>Toasts ({{ user.toasts }})</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+</div>
+<section class="p-y-30" *ngIf="loaded">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 hidden-md-down">
+                <div class="widget widget-about">
+                    <h5 class="widget-title">About {{ user.username }}</h5>
+                    <p>{{ user.about }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

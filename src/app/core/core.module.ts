@@ -12,6 +12,8 @@ import { BreadcrumbsComponent } from '@core/components/breadcrumbs/breadcrumbs.c
 import { RouterModule } from '@angular/router';
 import { LoggedComponent } from '@core/components/logged/logged.component';
 import { LoginComponent } from '@core/components/login/login.component';
+import { SidebarComponent } from '@core/components/sidebar/sidebar.component';
+import { PaginationComponent } from '@core/components/pagination/pagination.component';
 
 @NgModule({
   imports: [
@@ -30,6 +32,8 @@ import { LoginComponent } from '@core/components/login/login.component';
     BreadcrumbsComponent,
     LoggedComponent,
     LoginComponent,
+    SidebarComponent,
+    PaginationComponent,
   ],
   exports: [
     LayoutContainerComponent,
@@ -37,7 +41,9 @@ import { LoginComponent } from '@core/components/login/login.component';
     LoadingComponent,
     ErrorComponent,
     WarningComponent,
-    BreadcrumbsComponent
+    BreadcrumbsComponent,
+    SidebarComponent,
+    PaginationComponent
   ],
   providers: [
 

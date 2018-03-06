@@ -17,7 +17,7 @@ const initialState: State = {
   errorMessage: '',
   entities: [],
   entity: [],
-  categories: []
+  categories: [],
 };
 
 export function reducer(state = initialState, action: BlogActions): State {

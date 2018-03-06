@@ -51,6 +51,10 @@
     color: $color-twitch;
 }
 
+.badge-youtube-text {
+    color: $color-youtube;
+}
+
 // Social Badges
 .badge-twitch {
     background-color: $color-twitch;
@@ -123,4 +127,8 @@
 
 .badge-outline-twitch {
     @include badge-outline($color-twitch);
+}
+
+.badge-outline-youtube {
+    @include badge-outline($color-youtube);
 }
