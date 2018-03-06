@@ -1,0 +1,5 @@
+<toxic-layout-container>
+    <toxic-loading [loading]="loading$ | async"></toxic-loading>
+    <toxic-error [error]="error$ | async" [errorMessage]="errorMessage$ | async"></toxic-error>
+    <toxic-users-profile [userId]="userId" [user]="user$ | async" [loaded]="loaded$ | async" [error]="error$ | async"></toxic-users-profile>
+</toxic-layout-container>

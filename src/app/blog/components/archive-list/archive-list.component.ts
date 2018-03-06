@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { UserColor } from '@core/helpers/userColor';
 
 @Component({
   selector: 'toxic-archive-list',
@@ -21,6 +22,11 @@ export class ArchiveListComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  getUserColor(role) {
+    const color = new UserColor();
+    return color.getUserBadgeColor(role);
   }
 
 }

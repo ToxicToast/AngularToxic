@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl, SafeUrl, SafeHtml, SafeStyle } from '@angular/platform-browser';
+import { UserColor } from '@core/helpers/userColor';
 
 @Component({
   selector: 'toxic-posts-comments',
@@ -32,6 +33,11 @@ export class PostsCommentsComponent implements OnInit {
     if (this.dropdownOpen) {
       return this.sanitizer.bypassSecurityTrustStyle('display: block !important;');
     }
+  }
+
+  getUserColor(role) {
+    const color = new UserColor();
+    return color.getUserOutlineColor(role);
   }
 
 }

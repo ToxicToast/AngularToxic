@@ -4,8 +4,8 @@ import { Observable } from 'rxjs/Observable';
 
 import { Store } from '@ngrx/store';
 
-import * as fromAuth from '../../reducers/index';
-import * as authActions from '../../actions/auth-actions';
+import * as fromAuth from '@auth/reducers/index';
+import * as authActions from '@auth/actions/auth-actions';
 
 @Component({
   selector: 'toxic-auth-register-container',

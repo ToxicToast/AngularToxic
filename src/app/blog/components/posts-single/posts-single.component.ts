@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, AfterViewChecked, Output, EventEmitter } from '@angular/core';
+import { UserColor } from '@core/helpers/userColor';
 
 @Component({
   selector: 'toxic-posts-single',
@@ -13,6 +14,7 @@ export class PostsSingleComponent implements OnInit, AfterViewChecked {
   @Input() error: boolean;
   @Input() comments: any[];
   @Input() commentsLoading: boolean;
+  @Input() loggedUser: any[];
   @Output() saveComment = new EventEmitter<any>();
   breadcrumbs = [];
   private breadcrumbsAdded = false;
@@ -48,5 +50,10 @@ export class PostsSingleComponent implements OnInit, AfterViewChecked {
 
   onSaveComment(payload) {
     this.saveComment.emit(payload);
+  }
+
+  getUserColor(role) {
+    const color = new UserColor();
+    return color.getUserBadgeColor(role);
   }
 }

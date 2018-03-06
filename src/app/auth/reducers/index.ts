@@ -1,9 +1,9 @@
 import { createSelector, createFeatureSelector } from '@ngrx/store';
 
-import * as fromRoot from '../../core/reducers/index';
+import * as fromRoot from '@core/reducers/index';
 
-import * as fromRegister from '../reducers/register';
-import * as fromLogin from '../reducers/login';
+import * as fromRegister from '@auth/reducers/register';
+import * as fromLogin from '@auth/reducers/login';
 
 export interface AuthState {
   register: fromRegister.State;

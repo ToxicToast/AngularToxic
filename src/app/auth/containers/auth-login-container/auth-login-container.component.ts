@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
-import { SessionStorage } from '../../../core/helpers/sessionStorage';
+import { SessionStorage } from '@core/helpers/sessionStorage';
 
 import { Store } from '@ngrx/store';
 
-import * as fromAuth from '../../reducers/index';
-import * as authActions from '../../actions/auth-actions';
+import * as fromAuth from '@auth/reducers/index';
+import * as authActions from '@auth/actions/auth-actions';
 
 @Component({
   selector: 'toxic-auth-login-container',

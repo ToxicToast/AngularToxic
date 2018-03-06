@@ -10,20 +10,20 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule, RouterStateSerializer } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
-import { reducers, metaReducers } from './core/reducers/index';
-import { CustomRouterStateSerializer } from './core/utils/RouterState';
+import { reducers, metaReducers } from '@core/reducers/index';
+import { CustomRouterStateSerializer } from '@core/utils/RouterState';
 
-import { CoreModule } from './core/core.module';
-import { BlogModule } from './blog/blog.module';
-import { AuthModule } from './auth/auth.module';
-import { UsersModule } from './users/users.module';
+import { CoreModule } from '@core/core.module';
+import { BlogModule } from '@blog/blog.module';
+import { AuthModule } from '@auth/auth.module';
+import { UsersModule } from '@users/users.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { environment } from '../environments/environment';
+import { environment } from '@env/environment';
 
-import { AuthInterceptor } from './core/interceptors/auth';
+import { AuthInterceptor } from '@core/interceptors/auth';
 
 const StoreDevTools = !environment.production ? StoreDevtoolsModule.instrument() : [];
 const RouterProvider = { provide: RouterStateSerializer, useClass: CustomRouterStateSerializer };

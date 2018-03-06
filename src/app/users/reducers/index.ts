@@ -1,7 +1,7 @@
 import { createSelector, createFeatureSelector } from '@ngrx/store';
 
-import * as fromRoot from '../../core/reducers/index';
-import * as fromCollection from '../reducers/collection';
+import * as fromRoot from '@core/reducers/index';
+import * as fromCollection from '@users/reducers/collection';
 
 export interface UsersState {
   collection: fromCollection.State;
@@ -23,3 +23,4 @@ export const getUsersCollectionLoading = createSelector(selectUsersState, (state
 export const getUsersCollectionLoaded = createSelector(selectUsersState, (state: UsersState) => state.collection.loaded);
 export const getUsersCollectionError = createSelector(selectUsersState, (state: UsersState) => state.collection.error);
 export const getUsersCollectionErrorMessage = createSelector(selectUsersState, (state: UsersState) => state.collection.errorMessage);
+export const getUsersCollectionEntity = createSelector(selectUsersState, (state: UsersState) => state.collection.entity);

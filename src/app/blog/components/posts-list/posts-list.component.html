@@ -24,7 +24,7 @@
                                     <span>
                                             <i class="fa fa-clock-o"></i>
                                             {{ post.date }} by
-                                            <a href="#">{{ post.user.username }}</a>
+                                            <a [routerLink]="['/users', post?.user.id]" [class]="getUserColor(post?.user.role)">{{ post.user.username }}</a>
                                         </span>
                                     <span>
                                             <a [routerLink]="['/blog', post?.id]">
@@ -47,7 +47,7 @@
                 </ng-template>
             </div>
             <div class="col-lg-4">
-                Sidebar
+                <toxic-sidebar></toxic-sidebar>
             </div>
         </div>
     </div>

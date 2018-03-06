@@ -1,8 +1,8 @@
 import { ActionReducerMap, createSelector, createFeatureSelector, ActionReducer, MetaReducer, combineReducers } from '@ngrx/store';
 import {compose} from '@ngrx/core';
-import { environment } from '../../../environments/environment';
+import { environment } from '@env/environment';
 //
-import { RouterStateUrl } from '../utils/RouterState';
+import { RouterStateUrl } from '@core/utils/RouterState';
 //
 import { storeFreeze } from 'ngrx-store-freeze';
 import { storeLogger } from 'ngrx-store-logger';

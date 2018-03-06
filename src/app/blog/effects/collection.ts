@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
 import { Actions, Effect } from '@ngrx/effects';
 
-import * as collection from './../actions/blog-actions';
+import * as collection from '@blog/actions/blog-actions';
 import {
 LoadPostsSuccess,
 LoadPostsFailure,
@@ -20,9 +20,9 @@ LoadCommentsSuccess,
 LoadCommentsFailure,
 AddCommentsSuccess,
 AddCommentsFailure
-} from './../actions/blog-actions';
+} from '@blog/actions/blog-actions';
 
-import { PostsService } from '../services/posts.service';
+import { PostsService } from '@blog/services/posts.service';
 
 @Injectable()
 export class CollectionEffects {

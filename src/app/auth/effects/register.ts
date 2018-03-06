@@ -8,13 +8,13 @@ import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
 import { Actions, Effect } from '@ngrx/effects';
 
-import * as collection from './../actions/auth-actions';
+import * as collection from '@auth/actions/auth-actions';
 import {
   RegisterUserSuccess,
   RegisterUserFailure
-} from './../actions/auth-actions';
+} from '@auth/actions/auth-actions';
 
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '@auth/services/auth.service';
 
 @Injectable()
 export class RegisterEffects {

@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { UserColor } from '@core/helpers/userColor';
 
 @Component({
   selector: 'toxic-users-list',
@@ -12,6 +13,8 @@ export class UsersListComponent implements OnInit {
   @Input() loaded: boolean;
   @Input() error: boolean;
   @Input() errorMessage: string;
+  @Output() eventRefresh = new EventEmitter<any>();
+
   breadcrumbs = [];
   private breadcrumbsAdded = false;
 
@@ -25,7 +28,12 @@ export class UsersListComponent implements OnInit {
   }
 
   refreshList() {
-    console.log('refresh List');
+    this.eventRefresh.emit();
+  }
+
+  getUserColor(role) {
+    const color = new UserColor();
+    return color.getUserRoleColor(role);
   }
 
 }

@@ -1,4 +1,4 @@
-import { BlogActionTypes, BlogActions } from '../actions/blog-actions';
+import { BlogActionTypes, BlogActions } from '@blog/actions/blog-actions';
 
 export interface State {
   loaded: boolean;
@@ -17,7 +17,7 @@ const initialState: State = {
   errorMessage: '',
   entities: [],
   entity: [],
-  categories: []
+  categories: [],
 };
 
 export function reducer(state = initialState, action: BlogActions): State {

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {Route, ActivatedRoute, Router} from '@angular/router';
+import { Route, ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'toxic-header',

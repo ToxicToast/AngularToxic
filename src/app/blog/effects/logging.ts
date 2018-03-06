@@ -8,9 +8,9 @@ import { of } from 'rxjs/observable/of';
 import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
 import { Actions, Effect } from '@ngrx/effects';
-import * as collection from './../actions/blog-actions';
+import * as collection from '@blog/actions/blog-actions';
 
-import { LoggingService } from '../services/logging.service';
+import { LoggingService } from '@blog/services/logging.service';
 
 import {
 LoadPostsFailure,
@@ -18,7 +18,7 @@ LoadLastPostFailure,
 LoadCategoriesFailure,
 LoadCommentsFailure,
 AddCommentsFailure
-} from './../actions/blog-actions';
+} from '@blog/actions/blog-actions';
 
 @Injectable()
 export class LoggerEffects {

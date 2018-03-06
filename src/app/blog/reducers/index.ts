@@ -1,9 +1,9 @@
 import { createSelector, createFeatureSelector } from '@ngrx/store';
 
-import * as fromRoot from '../../core/reducers/index';
-import * as fromCollection from '../reducers/collection';
-import * as fromConfiguration from '../reducers/configuration';
-import * as fromComments from '../reducers/comments';
+import * as fromRoot from '@core/reducers/index';
+import * as fromCollection from '@blog/reducers/collection';
+import * as fromConfiguration from '@blog/reducers/configuration';
+import * as fromComments from '@blog/reducers/comments';
 
 export interface BlogState {
   collection: fromCollection.State;

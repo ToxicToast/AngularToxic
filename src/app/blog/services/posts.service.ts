@@ -4,10 +4,10 @@ import { Headers, RequestOptions, Response } from '@angular/http';
 
 import { Store } from '@ngrx/store';
 
-import { environment } from '../../../environments/environment';
+import { environment } from '@env/environment';
 
-import * as collection from '../actions/blog-actions';
-import * as fromBlog from '../reducers/index';
+import * as collection from '@blog/actions/blog-actions';
+import * as fromBlog from '@blog/reducers/index';
 
 @Injectable()
 export class PostsService {

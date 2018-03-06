@@ -26,7 +26,7 @@ export enum BlogActionTypes {
   //
   CHANGE_PAGE = '[Blog] Change Page',
   CHANGE_VIEW = '[Blog] Change View',
-  CHANGE_CATEGORY = '[Blog] Change Category'
+  CHANGE_CATEGORY = '[Blog] Change Category',
 }
 
 export class LoadCategories implements Action {

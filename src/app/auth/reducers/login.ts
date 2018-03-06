@@ -1,4 +1,4 @@
-import { AuthActionTypes, AuthActions } from '../actions/auth-actions';
+import { AuthActionTypes, AuthActions } from '@auth/actions/auth-actions';
 
 export interface State {
   loaded: boolean;

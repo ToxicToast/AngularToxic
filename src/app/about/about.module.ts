@@ -1,15 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CoreModule } from '../core/core.module';
+import { CoreModule } from '@core/core.module';
 
-import { AboutRoutingModule } from './about-routing.module';
-import { AboutIndexContainerComponent } from './containers/about-index-container/about-index-container.component';
-import { AboutToxicComponent } from './components/about-toxic/about-toxic.component';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { reducers } from '@about/reducers/index';
+
+import { CollectionEffects } from '@about/effects/collection';
+
+import { AboutRoutingModule } from '@about/about-routing.module';
+import { AboutIndexContainerComponent } from '@about/containers/about-index-container/about-index-container.component';
+import { AboutToxicComponent } from '@about/components/about-toxic/about-toxic.component';
+
+import { AboutService } from '@about/services/about.service';
 
 @NgModule({
   imports: [
     CommonModule,
+    StoreModule.forFeature('about', reducers),
+    EffectsModule.forFeature([CollectionEffects]),
     AboutRoutingModule,
     CoreModule
   ],
@@ -20,6 +30,8 @@ import { AboutToxicComponent } from './components/about-toxic/about-toxic.compon
   exports: [
     AboutIndexContainerComponent
   ],
-  providers: []
+  providers: [
+    AboutService
+  ]
 })
 export class AboutModule { }

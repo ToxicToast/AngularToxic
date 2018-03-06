@@ -12,13 +12,16 @@
             <div class="col-12 col-sm-6 col-md-4" *ngFor="let user of users">
                 <div class="card card-lg">
                     <div class="card-img">
-                        <a href="#">
-                            <img src="/assets/img/game/game-1.jpg" class="card-img-top">
+                        <a [routerLink]="['/users', user?.id]">
+                            <img [src]="user?.image" class="card-img-top">
                         </a>
+                        <div [class]="getUserColor(user?.role)">
+                            {{ user?.role }}
+                        </div>
                     </div>
                     <div class="card-block">
                         <h4 class="card-title">
-                            <a href="#">{{ user?.username }}</a>
+                            <a [routerLink]="['/users', user?.id]">{{ user?.username }}</a>
                         </h4>
                         <div class="card-meta">
                             <span>{{ user?.date }}</span>

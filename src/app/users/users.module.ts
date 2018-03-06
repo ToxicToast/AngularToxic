@@ -2,19 +2,21 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { CoreModule } from '../core/core.module';
+import { CoreModule } from '@core/core.module';
 
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { reducers } from './reducers/index';
+import { reducers } from '@users/reducers/index';
 
-import { CollectionEffects } from './effects/collection';
+import { CollectionEffects } from '@users/effects/collection';
 
-import { UsersRoutingModule } from './users-routing.module';
-import { UsersIndexContainerComponent } from './containers/users-index-container/users-index-container.component';
+import { UsersRoutingModule } from '@users/users-routing.module';
+import { UsersIndexContainerComponent } from '@users/containers/users-index-container/users-index-container.component';
 
-import { UsersService } from './services/users.service';
-import { UsersListComponent } from './Components/users-list/users-list.component';
+import { UsersService } from '@users/services/users.service';
+import { UsersListComponent } from '@users/components/users-list/users-list.component';
+import { UsersShowContainerComponent } from '@users/containers/users-show-container/users-show-container.component';
+import { UsersProfileComponent } from '@users/components/users-profile/users-profile.component';
 
 @NgModule({
   imports: [
@@ -26,10 +28,13 @@ import { UsersListComponent } from './Components/users-list/users-list.component
   ],
   declarations: [
     UsersIndexContainerComponent,
-    UsersListComponent
+    UsersListComponent,
+    UsersShowContainerComponent,
+    UsersProfileComponent
   ],
   exports: [
-    UsersIndexContainerComponent
+    UsersIndexContainerComponent,
+    UsersShowContainerComponent
   ],
   providers: [
     UsersService

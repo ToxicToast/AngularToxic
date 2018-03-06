@@ -4,8 +4,11 @@ import { Observable } from 'rxjs/Observable';
 
 import { Store } from '@ngrx/store';
 
-import * as fromBlog from '../../reducers/index';
-import * as blogActions from '../../actions/blog-actions';
+import * as fromBlog from '@blog/reducers/index';
+import * as blogActions from '@blog/actions/blog-actions';
+
+import * as fromAuth from '@auth/reducers/index';
+import * as authActions from '@auth/actions/auth-actions';
 
 @Component({
   selector: 'toxic-blog-show-container',
@@ -22,12 +25,14 @@ export class BlogShowContainerComponent implements OnInit, OnDestroy {
   commentsState$: Observable<any>;
   comments$: Observable<any[]>;
   commentsLoading$: Observable<boolean>;
+  loggedUser$: Observable<any[]>;
   private postId: number;
   private sub: any;
 
 
   constructor(
     private store: Store<fromBlog.State>,
+    private authStore: Store<fromAuth.State>,
     private router: Router,
     private route: ActivatedRoute
   ) {
@@ -38,6 +43,8 @@ export class BlogShowContainerComponent implements OnInit, OnDestroy {
     this.posts$ = this.store.select(fromBlog.getBlogCollectionEntities);
     this.comments$ = this.store.select(fromBlog.getBlogCommentsEntities);
     this.commentsLoading$ = this.store.select(fromBlog.getBlogCommentsLoading);
+    //
+    this.loggedUser$ = this.store.select(fromAuth.getAuthLoginEntity);
   }
 
   ngOnInit() {

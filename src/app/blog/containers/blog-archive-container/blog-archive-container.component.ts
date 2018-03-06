@@ -4,8 +4,8 @@ import { Observable } from 'rxjs/Observable';
 
 import { Store } from '@ngrx/store';
 
-import * as fromBlog from '../../reducers/index';
-import * as blogActions from '../../actions/blog-actions';
+import * as fromBlog from '@blog/reducers/index';
+import * as blogActions from '@blog/actions/blog-actions';
 
 @Component({
   selector: 'toxic-blog-archive-container',

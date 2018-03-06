@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { SessionStorage } from '../../../core/helpers/sessionStorage';
+import { SessionStorage } from '@core/helpers/sessionStorage';
 
 @Component({
   selector: 'toxic-write-comments',
@@ -15,11 +15,11 @@ export class WriteCommentsComponent implements OnInit {
   logged = false;
 
   @Input() postId: number;
+  @Input() loggedUser: any;
   @Output() saveComment = new EventEmitter<any>();
 
   commentForm: FormGroup;
-  // user_id number
-  // hasRights <true|false>
+  userId = 0;
 
   constructor(
     private fb: FormBuilder
@@ -28,8 +28,12 @@ export class WriteCommentsComponent implements OnInit {
   }
 
   ngOnInit() {
-    const storage = new SessionStorage('loggedUser');
-    this.logged = storage.hasItem();
+    if (this.loggedUser && this.loggedUser.id) {
+      this.logged = true;
+      this.userId = this.loggedUser.id;
+    } else {
+      this.logged = false;
+    }
   }
 
   onSaveComment() {
@@ -39,7 +43,7 @@ export class WriteCommentsComponent implements OnInit {
     const { comment } = this.commentForm.value;
     const payload = {
       postId: this.postId,
-      userId: 1,
+      userId: this.userId,
       comment
     };
     this.saveComment.emit(payload);
