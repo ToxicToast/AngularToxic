@@ -14,6 +14,8 @@ export enum AuthActionTypes {
   GET_LOGGED_USER_TOKEN = '[Auth] Get Logged User with Token',
   GET_LOGGED_USER_TOKEN_SUCCESS = '[Auth] successfully got Userdata by Token',
   GET_LOGGED_USER_TOKEN_FAILURE = '[Auth] failed getting Userdata by Token',
+
+  REGISTER_USER_TWITCH = '[Auth] Register User via Twitch',
 }
 
 export class RegisterUser implements Action {
@@ -64,6 +66,10 @@ export class GetLoggedUserWithTokenSuccess implements Action {
 export class GetLoggedUserWithTokenFailure implements Action {
   readonly type = AuthActionTypes.GET_LOGGED_USER_TOKEN_FAILURE;
   constructor(public payload: string) {}
+}
+
+export class RegisterUserTwitch implements Action {
+  readonly type = AuthActionTypes.REGISTER_USER_TWITCH;
 }
 
 export type AuthActions = RegisterUser | RegisterUserSuccess | RegisterUserFailure |
