@@ -2,6 +2,9 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
+import { PostModel } from '@blog/models/post.model';
+import { CommentModel } from '@blog/models/comment.model';
+
 import { Store } from '@ngrx/store';
 
 import * as fromBlog from '@blog/reducers/index';
@@ -21,9 +24,9 @@ export class BlogShowContainerComponent implements OnInit, OnDestroy {
   loaded$: Observable<boolean>;
   error$: Observable<boolean>;
   errorMessage$: Observable<string>;
-  posts$: Observable<any[]>;
+  posts$: Observable<PostModel[]>;
   commentsState$: Observable<any>;
-  comments$: Observable<any[]>;
+  comments$: Observable<CommentModel[]>;
   commentsLoading$: Observable<boolean>;
   loggedUser$: Observable<any[]>;
   private postId: number;

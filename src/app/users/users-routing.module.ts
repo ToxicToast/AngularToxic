@@ -6,7 +6,7 @@ import { UsersShowContainerComponent } from '@users/containers/users-show-contai
 
 const routes: Routes = [
   { path: '', component: UsersIndexContainerComponent },
-  { path: 'users/:id', component: UsersShowContainerComponent }
+  { path: 'users/:id', component: UsersShowContainerComponent },
 ];
 
 @NgModule({

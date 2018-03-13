@@ -15,6 +15,8 @@ export class UsersProfileComponent implements OnInit {
   @Input() error: boolean;
   @Input() errorMessage: string;
 
+  view = 'achievements';
+
   constructor(
     private sanitizer: DomSanitizer
   ) { }
@@ -28,5 +30,17 @@ export class UsersProfileComponent implements OnInit {
 
   userBannedError(username) {
     return { message: `The Profile of ${username} is currently not available.` };
+  }
+
+  changeView(newView) {
+    this.view = newView;
+  }
+
+  checkActiveClass(item) {
+    if (this.view === item) {
+      return 'active';
+    } else {
+      return '';
+    }
   }
 }

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
+import { PostModel } from '@blog/models/post.model';
+
 import { Store } from '@ngrx/store';
 
 import * as fromBlog from '@blog/reducers/index';
@@ -18,7 +20,7 @@ export class BlogArchiveContainerComponent implements OnInit {
   loaded$: Observable<boolean>;
   error$: Observable<boolean>;
   errorMessage$: Observable<string>;
-  posts$: Observable<any[]>;
+  posts$: Observable<PostModel[]>;
 
   constructor(
     private store: Store<fromBlog.State>,

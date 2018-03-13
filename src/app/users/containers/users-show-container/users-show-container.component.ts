@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
+import { UserModel } from '@users/models/user.model';
+
 import { Store } from '@ngrx/store';
 
 import * as fromUsers from '@users/reducers/index';
@@ -18,7 +20,7 @@ export class UsersShowContainerComponent implements OnInit {
   loaded$: Observable<boolean>;
   error$: Observable<boolean>;
   errorMessage$: Observable<string>;
-  user$: Observable<any>;
+  user$: Observable<UserModel>;
   userId: number;
   private sub: any;
 

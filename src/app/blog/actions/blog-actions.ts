@@ -1,5 +1,7 @@
 import { Action } from '@ngrx/store';
 
+import { PostModel } from '@blog/models/post.model';
+
 export enum BlogActionTypes {
   LOAD_POSTS = '[Blog] Load Posts',
   LOAD_POSTS_SUCCESS = '[Blog] Successfully loaded Posts',
@@ -51,7 +53,7 @@ export class LoadPosts implements Action {
 
 export class LoadPostsSuccess implements Action {
   readonly type = BlogActionTypes.LOAD_POSTS_SUCCESS;
-  constructor(public payload: any|any[]) {}
+  constructor(public payload: PostModel|PostModel[]) {}
 }
 
 export class LoadPostsFailure implements Action {
@@ -65,7 +67,7 @@ export class LoadLastPost implements Action {
 
 export class LoadLastPostSuccess implements Action {
   readonly type = BlogActionTypes.LOAD_LASTPOST_SUCCESS;
-  constructor(public payload: any|any[]) {}
+  constructor(public payload: PostModel|PostModel[]) {}
 }
 
 export class LoadLastPostFailure implements Action {

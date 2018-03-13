@@ -13,20 +13,20 @@
                 <img [src]="user.image" alt="">
             </div>
             <ul class="toolbar-nav hidden-md-down">
-                <li class="active">
-                    <a>Profile</a>
+                <li [class]="checkActiveClass('achievements')">
+                    <a (click)="changeView('achievements')">Profile</a>
                 </li>
-                <li>
-                    <a>Streams ({{ user.streams }})</a>
+                <li [class]="checkActiveClass('streams')">
+                    <a (click)="changeView('streams')">Streams ({{ user.streams }})</a>
                 </li>
-                <li>
-                    <a>Comments ({{ user.comments }})</a>
+                <li [class]="checkActiveClass('comments')">
+                    <a (click)="changeView('comments')">Comments ({{ user.comments }})</a>
                 </li>
-                <li>
-                    <a>Groups ({{ user.groups.count }})</a>
+                <li [class]="checkActiveClass('groups')">
+                    <a (click)="changeView('groups')">Groups ({{ user.groups.length }})</a>
                 </li>
-                <li>
-                    <a>Toasts ({{ user.toasts }})</a>
+                <li [class]="checkActiveClass('toasts')">
+                    <a (click)="changeView('toasts')">Toasts ({{ user.toasts }})</a>
                 </li>
             </ul>
         </div>
@@ -38,11 +38,14 @@
             <div class="col-lg-3 hidden-md-down">
                 <div class="widget widget-about">
                     <h5 class="widget-title">About {{ user.username }}</h5>
-                    <p>{{ user.about }}</p>
+                    <p [innerHTML]="user.about"></p>
                 </div>
             </div>
             <div class="col-lg-9">
-                <toxic-user-achievements></toxic-user-achievements>
+                <toxic-user-achievements *ngIf="view === 'achievements'"></toxic-user-achievements>
+                <toxic-users-stream *ngIf="view === 'streams'"></toxic-users-stream>
+
+                <toxic-users-groups *ngIf="view === 'groups'" [groups]="user.groups"></toxic-users-groups>
             </div>
         </div>
     </div>

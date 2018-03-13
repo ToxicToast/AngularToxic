@@ -35,7 +35,14 @@ export class RegisterEffects {
   @Effect({ dispatch: false })
   registerUserViaTwitch$ = this.actions.ofType(collection.AuthActionTypes.REGISTER_USER_TWITCH).do(() => {
       this.service.registerUserViaTwitch().subscribe(payload => {
-        window.location.href = payload.data;
+        if (payload) {
+          // console.error(payload);
+          /*if (payload.data) {
+            console.error(payload.data);
+          }*/
+        }
+
+        // window.location.href = payload.data;
       });
   });
 
