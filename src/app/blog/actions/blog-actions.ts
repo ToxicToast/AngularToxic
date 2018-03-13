@@ -1,7 +1,5 @@
 import { Action } from '@ngrx/store';
 
-import { PostModel } from '@blog/models/post.model';
-
 export enum BlogActionTypes {
   LOAD_POSTS = '[Blog] Load Posts',
   LOAD_POSTS_SUCCESS = '[Blog] Successfully loaded Posts',
@@ -38,7 +36,7 @@ export class LoadCategories implements Action {
 
 export class LoadCategoriesSuccess implements Action {
   readonly type = BlogActionTypes.LOAD_CATEGORIES_SUCCESS;
-  constructor(public payload: any|any[]) {}
+  constructor(public payload: any) {}
 }
 
 export class LoadCategoriesFailure implements Action {
@@ -53,7 +51,7 @@ export class LoadPosts implements Action {
 
 export class LoadPostsSuccess implements Action {
   readonly type = BlogActionTypes.LOAD_POSTS_SUCCESS;
-  constructor(public payload: PostModel|PostModel[]) {}
+  constructor(public payload: any) {}
 }
 
 export class LoadPostsFailure implements Action {
@@ -67,7 +65,7 @@ export class LoadLastPost implements Action {
 
 export class LoadLastPostSuccess implements Action {
   readonly type = BlogActionTypes.LOAD_LASTPOST_SUCCESS;
-  constructor(public payload: PostModel|PostModel[]) {}
+  constructor(public payload: any) {}
 }
 
 export class LoadLastPostFailure implements Action {
@@ -101,7 +99,7 @@ export class LoadComments implements Action {
 
 export class LoadCommentsSuccess implements Action {
   readonly type = BlogActionTypes.LOAD_COMMENTS_SUCCESS;
-  constructor(public payload: any|any[]) {}
+  constructor(public payload: any) {}
 }
 
 export class LoadCommentsFailure implements Action {
@@ -111,12 +109,12 @@ export class LoadCommentsFailure implements Action {
 
 export class AddComments implements Action {
   readonly type = BlogActionTypes.ADD_COMMENTS;
-  constructor(public payload: any|any[]) {}
+  constructor(public payload: any) {}
 }
 
 export class AddCommentsSuccess implements Action {
   readonly type = BlogActionTypes.ADD_COMMENTS_SUCCESS;
-  constructor(public payload: any|any[]) {}
+  constructor(public payload: any) {}
 }
 
 export class AddCommentsFailure implements Action {

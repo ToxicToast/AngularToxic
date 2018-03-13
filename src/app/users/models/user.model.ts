@@ -1,6 +1,6 @@
 import { GroupModel } from '@users/models/group.model';
 
-export interface UserModel {
+export class UserModel {
   id: number;
   username: string;
   about: string;
@@ -14,14 +14,14 @@ export interface UserModel {
   toasts: number;
 }
 
-export interface RegisterUserModel {
+export class RegisterUserModel {
   username: string;
   email: string;
   password: string;
   remember: boolean;
 }
 
-export interface LoginUserModel {
+export class LoginUserModel {
   email: string;
   password: string;
   remember: boolean;

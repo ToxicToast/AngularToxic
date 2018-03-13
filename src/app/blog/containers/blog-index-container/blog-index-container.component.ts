@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
-import { PostModel } from '@blog/models/post.model';
-
 import { Store } from '@ngrx/store';
 
 import * as fromBlog from '@blog/reducers/index';
@@ -19,9 +17,9 @@ export class BlogIndexContainerComponent implements OnInit {
   loaded$: Observable<boolean>;
   error$: Observable<boolean>;
   errorMessage$: Observable<string>;
-  posts$: Observable<PostModel[]>;
-  lastPost$: Observable<PostModel[]>;
-  categories$: Observable<any[]>;
+  posts$: Observable<any>;
+  lastPost$: Observable<any>;
+  categories$: Observable<any>;
   selectedCategory$: Observable<number>;
 
 

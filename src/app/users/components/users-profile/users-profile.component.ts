@@ -9,7 +9,7 @@ import { DomSanitizer, SafeResourceUrl, SafeUrl, SafeHtml, SafeStyle } from '@an
 export class UsersProfileComponent implements OnInit {
 
   @Input() userId: number;
-  @Input() user: any[];
+  @Input() user: any;
   @Input() loading: boolean;
   @Input() loaded: boolean;
   @Input() error: boolean;

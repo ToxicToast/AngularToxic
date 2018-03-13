@@ -1,7 +1,7 @@
 import { CategoryModel } from '@blog/models/category.model';
 import { UserModel } from '@users/models/user.model';
 
-export interface PostModel {
+export class PostModel {
   id: number;
   title: string;
   slug: string;

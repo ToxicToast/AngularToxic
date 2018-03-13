@@ -22,7 +22,7 @@ export class LoadUsers implements Action {
 
 export class LoadUsersSuccess implements Action {
   readonly type = UsersActionTypes.LOAD_USERS_SUCCESS;
-  constructor(public payload: any|any[]) {}
+  constructor(public payload: any) {}
 }
 
 export class LoadUsersFailure implements Action {
@@ -37,7 +37,7 @@ export class LoadUser implements Action {
 
 export class LoadUserSuccess implements Action {
   readonly type = UsersActionTypes.LOAD_USER_SUCCESS;
-  constructor(public payload: any|any[]) {}
+  constructor(public payload: any) {}
 }
 
 export class LoadUserFailure implements Action {
