@@ -37,7 +37,7 @@ export function reducer(state = initialState, action: UsersActions): State {
         loading: false,
         error: false,
         errorMessage: '',
-        entities: action.payload.data,
+        entities: action.payload,
       });
     }
 
@@ -67,7 +67,7 @@ export function reducer(state = initialState, action: UsersActions): State {
         loading: false,
         error: false,
         errorMessage: '',
-        entity: action.payload.data
+        entity: action.payload
       });
     }
 

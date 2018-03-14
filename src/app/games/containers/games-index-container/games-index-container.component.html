@@ -1,0 +1,5 @@
+<toxic-layout-container>
+    <toxic-loading [loading]="loading$ | async"></toxic-loading>
+    <toxic-error [error]="error$ | async" [errorMessage]="errorMessage$ | async"></toxic-error>
+    <toxic-games-list [loaded]="loaded$ | async" [games]="games$ | async"></toxic-games-list>
+</toxic-layout-container>

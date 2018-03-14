@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'auth', loadChildren: '@auth/auth.module#AuthModule', pathMatch: 'full' },
   { path: 'users', loadChildren: '@users/users.module#UsersModule', pathMatch: 'full' },
   { path: 'about', loadChildren: '@about/about.module#AboutModule', pathMatch: 'full' },
+  { path: 'games', loadChildren: '@games/games.module#GamesModule', pathMatch: 'full' },
 ];
 
 const options = {

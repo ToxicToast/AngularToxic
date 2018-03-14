@@ -65,7 +65,7 @@ export function reducer(state = initialState, action: AuthActions): State {
 
     case AuthActionTypes.GET_LOGGED_USER_TOKEN_SUCCESS: {
       return Object.assign({}, state, {
-        entity: action.payload.data,
+        entity: action.payload,
       });
     }
 

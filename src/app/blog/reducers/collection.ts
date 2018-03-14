@@ -79,7 +79,7 @@ export function reducer(state = initialState, action: BlogActions): State {
 
     case BlogActionTypes.LOAD_CATEGORIES_SUCCESS: {
       return Object.assign({}, state, {
-        categories: action.payload.data
+        categories: action.payload
       });
     }
 

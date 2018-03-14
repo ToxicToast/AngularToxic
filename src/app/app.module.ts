@@ -17,6 +17,7 @@ import { CoreModule } from '@core/core.module';
 import { BlogModule } from '@blog/blog.module';
 import { AuthModule } from '@auth/auth.module';
 import { UsersModule } from '@users/users.module';
+import { GamesModule } from '@games/games.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -45,6 +46,7 @@ const RouterProvider = { provide: RouterStateSerializer, useClass: CustomRouterS
     BlogModule,
     AuthModule,
     UsersModule,
+    GamesModule,
     ReactiveFormsModule
   ],
   providers: [
