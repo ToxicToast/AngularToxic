@@ -14,6 +14,7 @@ import { GamesService } from '@games/services/games.service';
 import { GamesRoutingModule } from '@games/games-routing.module';
 import { GamesIndexContainerComponent } from '@games/containers/games-index-container/games-index-container.component';
 import { GamesListComponent } from '@games/components/games-list/games-list.component';
+import { GamesToolbarComponent } from '@games/components/games-toolbar/games-toolbar.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { GamesListComponent } from '@games/components/games-list/games-list.comp
   ],
   declarations: [
     GamesIndexContainerComponent,
-    GamesListComponent
+    GamesListComponent,
+    GamesToolbarComponent
   ],
   providers: [
     GamesService

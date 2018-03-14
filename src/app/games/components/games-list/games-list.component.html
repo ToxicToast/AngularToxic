@@ -1,5 +1,25 @@
-<p *ngIf="loaded">
-    games-list works!
-</p>
-
-{{ games | json }}
+<div class="row" *ngIf="games && games.length > 0; else noContentTemplate">
+    <div class="col-12 col-sm-6 col-md-4" *ngFor="let game of games">
+        <div class="card card-lg">
+            <div class="card-img">
+                <a href="#">
+                    <img [src]="game.image" class="card-img-top" [alt]="game.title">
+                </a>
+                <div [class]="getPlatform(game.platform)">{{ game.platform }}</div>
+                <!--<div [class]="getApiSupport(game.hasApi)">API</div>-->
+            </div>
+            <div class="card-block">
+                <h4 class="card-title">
+                    <a href="#">{{ game.title }}</a>
+                </h4>
+                <div class="card-meta">
+                    <span>{{ game.date }}</span>
+                </div>
+                <!--<p class="card-text hidden">&nbsp;</p>-->
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template #noContentTemplate>
+    <toxic-warning></toxic-warning>
+</ng-template>

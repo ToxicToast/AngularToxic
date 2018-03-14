@@ -15,4 +15,20 @@ export class GamesListComponent implements OnInit {
   ngOnInit() {
   }
 
+  getPlatform(platform) {
+    if (platform === 'PC') {
+      return 'badge badge-pc';
+    } else {
+      return '';
+    }
+  }
+
+  getApiSupport(hasApi) {
+    if (hasApi === '1') {
+      return 'badge badge-youtube';
+    } else {
+      return 'hidden';
+    }
+  }
+
 }

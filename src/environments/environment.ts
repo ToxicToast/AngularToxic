@@ -6,7 +6,7 @@
 export const environment = {
   production: false,
   api: {
-    blog: 'http://toxicblog.local/api',
+    blog: 'http://toxicblog.local',
     youtube: ''
   }
 };
