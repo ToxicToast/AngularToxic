@@ -7,7 +7,13 @@ export enum UsersActionTypes {
 
   LOAD_USER = '[Blog] Load User',
   LOAD_USER_SUCCESS = '[Blog] Successfully loaded User',
-  LOAD_USER_FAILURE = '[Blog] Failed loading User'
+  LOAD_USER_FAILURE = '[Blog] Failed loading User',
+
+  REFRESH_USERS = '[Blog] Reload Users'
+}
+
+export class ReloadUsers implements Action {
+  readonly type = UsersActionTypes.REFRESH_USERS;
 }
 
 export class LoadUsers implements Action {
@@ -16,7 +22,7 @@ export class LoadUsers implements Action {
 
 export class LoadUsersSuccess implements Action {
   readonly type = UsersActionTypes.LOAD_USERS_SUCCESS;
-  constructor(public payload: any|any[]) {}
+  constructor(public payload: any) {}
 }
 
 export class LoadUsersFailure implements Action {
@@ -31,7 +37,7 @@ export class LoadUser implements Action {
 
 export class LoadUserSuccess implements Action {
   readonly type = UsersActionTypes.LOAD_USER_SUCCESS;
-  constructor(public payload: any|any[]) {}
+  constructor(public payload: any) {}
 }
 
 export class LoadUserFailure implements Action {

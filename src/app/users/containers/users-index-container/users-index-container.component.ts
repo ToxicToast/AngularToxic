@@ -36,7 +36,7 @@ export class UsersIndexContainerComponent implements OnInit {
   }
 
   onRefresh() {
-    this.store.dispatch(new usersActions.LoadUsers());
+    this.store.dispatch(new usersActions.ReloadUsers());
   }
 
 }

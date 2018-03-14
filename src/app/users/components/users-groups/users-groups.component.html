@@ -1,0 +1,14 @@
+<div class="post post-card post-profile" *ngFor="let group of groups">
+    <div class="post-header">
+        <div>
+            <h2 [class]="getUserColor(group.name)">
+                {{ group.name }}
+            </h2>
+            <div class="post-meta">
+                <span>
+                <i class="fa fa-clock-o"></i> {{ group.date }}
+              </span>
+            </div>
+        </div>
+    </div>
+</div>

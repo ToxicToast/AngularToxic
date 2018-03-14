@@ -9,11 +9,13 @@ import { DomSanitizer, SafeResourceUrl, SafeUrl, SafeHtml, SafeStyle } from '@an
 export class UsersProfileComponent implements OnInit {
 
   @Input() userId: number;
-  @Input() user: any[];
+  @Input() user: any;
   @Input() loading: boolean;
   @Input() loaded: boolean;
   @Input() error: boolean;
   @Input() errorMessage: string;
+
+  view = 'achievements';
 
   constructor(
     private sanitizer: DomSanitizer
@@ -24,5 +26,21 @@ export class UsersProfileComponent implements OnInit {
 
   getBackground(image) {
     return this.sanitizer.bypassSecurityTrustStyle(`background-image: url("${image}")`);
+  }
+
+  userBannedError(username) {
+    return { message: `The Profile of ${username} is currently not available.` };
+  }
+
+  changeView(newView) {
+    this.view = newView;
+  }
+
+  checkActiveClass(item) {
+    if (this.view === item) {
+      return 'active';
+    } else {
+      return '';
+    }
   }
 }

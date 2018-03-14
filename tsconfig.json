@@ -24,7 +24,8 @@
       "@auth/*": ["app/auth/*"],
       "@blog/*": ["app/blog/*"],
       "@core/*": ["app/core/*"],
-      "@users/*": ["app/users/*"]
+      "@users/*": ["app/users/*"],
+      "@games/*": ["app/games/*"]
     }
   }
 }

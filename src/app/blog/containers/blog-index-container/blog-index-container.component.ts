@@ -17,9 +17,9 @@ export class BlogIndexContainerComponent implements OnInit {
   loaded$: Observable<boolean>;
   error$: Observable<boolean>;
   errorMessage$: Observable<string>;
-  posts$: Observable<any[]>;
-  lastPost$: Observable<any[]>;
-  categories$: Observable<any[]>;
+  posts$: Observable<any>;
+  lastPost$: Observable<any>;
+  categories$: Observable<any>;
   selectedCategory$: Observable<number>;
 
 

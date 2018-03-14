@@ -19,7 +19,7 @@ export class UsersShowContainerComponent implements OnInit {
   error$: Observable<boolean>;
   errorMessage$: Observable<string>;
   user$: Observable<any>;
-  private userId: number;
+  userId: number;
   private sub: any;
 
   constructor(

@@ -9,6 +9,8 @@ import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
 import { Actions, Effect } from '@ngrx/effects';
 
+import { SessionStorage } from '@core/helpers/sessionStorage';
+
 import * as collection from '@auth/actions/auth-actions';
 import {
   LoginUserSuccess,
@@ -56,5 +58,20 @@ export class LoginEffects {
   private logData(data) {
     return this.service.getUserByToken(data);
   }
+
+  /*private successfulLogin(payload) {
+    const { data } = payload;
+    const id = data.id;
+    this.setUserId(id);
+    return new GetLoggedUserWithTokenSuccess(data);
+  }
+
+  private setUserId(userId) {
+    const storage = new SessionStorage('userId');
+    if (storage.hasItem()) {
+      storage.removeItem();
+    }
+    storage.addItem(userId);
+  }*/
 
 }

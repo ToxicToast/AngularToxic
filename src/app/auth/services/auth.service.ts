@@ -27,6 +27,12 @@ export class AuthService {
     return this.http.post(url, payload);
   }
 
+  registerUserViaTwitch() {
+    const endpoint = '/auth/register/twitch';
+    const url = `${this.baseUrl}${endpoint}`;
+    return this.http.get(url);
+  }
+
   loginUser(data) {
     const { payload } = data;
     const endpoint = '/auth/login';

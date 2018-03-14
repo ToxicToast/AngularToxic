@@ -37,7 +37,7 @@ export function reducer(state = initialState, action: BlogActions): State {
         loaded: true,
         error: false,
         errorMessage: '',
-        entities: action.payload.data
+        entities: action.payload
       });
     }
 
@@ -59,7 +59,7 @@ export function reducer(state = initialState, action: BlogActions): State {
 
     case BlogActionTypes.LOAD_LASTPOST_SUCCESS: {
       return Object.assign({}, state, {
-        entity: action.payload.data
+        entity: action.payload
       });
     }
 

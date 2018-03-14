@@ -14,6 +14,7 @@ export class RegisterFormComponent implements OnInit {
   registerButtonDisabled = false;
 
   @Output() eventSave = new EventEmitter<any>();
+  @Output() eventTwitch = new EventEmitter<any>();
   @Input() loaded: boolean;
   @Input() loading: boolean;
   @Input() error: boolean;
@@ -28,12 +29,15 @@ export class RegisterFormComponent implements OnInit {
   }
 
   saveForm() {
-    console.log(this.loading, this.loaded);
     this.registerButtonDisabled = true;
     this.registerButtonText = 'Processing...';
     this.registerButtonIcon = 'fa fa-spinner fa-spin';
     this.passwordValidation();
     this.registerForm.reset();
+  }
+
+  registerViaTwitch() {
+    this.eventTwitch.emit();
   }
 
   private createForm() {

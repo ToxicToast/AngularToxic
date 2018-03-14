@@ -36,4 +36,8 @@ export class AuthRegisterContainerComponent implements OnInit {
     this.store.dispatch(new authActions.RegisterUser(user));
     this.router.navigate(['/']);
   }
+
+  onTwitchRegister() {
+    this.store.dispatch(new authActions.RegisterUserTwitch());
+  }
 }

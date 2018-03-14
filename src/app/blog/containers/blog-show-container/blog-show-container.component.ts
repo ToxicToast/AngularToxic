@@ -21,9 +21,9 @@ export class BlogShowContainerComponent implements OnInit, OnDestroy {
   loaded$: Observable<boolean>;
   error$: Observable<boolean>;
   errorMessage$: Observable<string>;
-  posts$: Observable<any[]>;
+  posts$: Observable<any>;
   commentsState$: Observable<any>;
-  comments$: Observable<any[]>;
+  comments$: Observable<any>;
   commentsLoading$: Observable<boolean>;
   loggedUser$: Observable<any[]>;
   private postId: number;
