@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { CoreModule } from '@core/core.module';
 
@@ -19,6 +20,7 @@ import { GamesToolbarComponent } from '@games/components/games-toolbar/games-too
 @NgModule({
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     GamesRoutingModule,
     StoreModule.forFeature('games', reducers),
     EffectsModule.forFeature([CollectionEffects]),
