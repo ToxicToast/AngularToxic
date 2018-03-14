@@ -26,9 +26,9 @@ export function reducer(state = initialState, action: GamesActions): State {
         loaded: false,
         error: false,
         errorMessage: '',
-        entities: []
       });
     }
+
     case GamesActionTypes.LOAD_GAMES_SUCCESS: {
       return Object.assign({}, state, {
         loading: false,
@@ -36,6 +36,7 @@ export function reducer(state = initialState, action: GamesActions): State {
         entities: action.payload
       });
     }
+
     case GamesActionTypes.LOAD_GAMES_FAILURE: {
       return Object.assign({}, state, {
         loading: false,
@@ -44,6 +45,7 @@ export function reducer(state = initialState, action: GamesActions): State {
         errorMessage: action.payload,
       });
     }
+
     default:
       return state;
   }
@@ -55,4 +57,3 @@ export const getLoading = (state: State) => state.loading;
 export const getLoaded = (state: State) => state.loaded;
 export const getError = (state: State) => state.error;
 export const getErrorMessage = (state: State) => state.errorMessage;
-

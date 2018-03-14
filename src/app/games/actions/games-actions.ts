@@ -20,4 +20,4 @@ export class LoadGamesFailure implements Action {
   constructor(public payload: string) {}
 }
 
-export type GamesActions = LoadGames;
+export type GamesActions = LoadGames | LoadGamesSuccess | LoadGamesFailure;
