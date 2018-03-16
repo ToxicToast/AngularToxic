@@ -26,4 +26,11 @@ export class GamesService {
     return this.http.get(url);
   }
 
+  searchGames(searchValue) {
+    const { payload } = searchValue;
+    const endpoint = `/games/search`;
+    const url = `${this.baseUrl}${endpoint}`;
+    return this.http.post(url, { data: payload });
+  }
+
 }

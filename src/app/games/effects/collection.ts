@@ -33,4 +33,11 @@ export class CollectionEffects {
   .map(data => new LoadGamesSuccess(data))
   .catch(err => of(new LoadGamesFailure(err)))
   );
+
+  @Effect()
+  searchCollection$ = this.actions.ofType(collection.GamesActionTypes.SEARCH_GAME)
+  .switchMap(payload => this.service.searchGames(payload)
+  .map(data => new LoadGamesSuccess(data))
+  .catch(err => of(new LoadGamesFailure(err)))
+  );
 }

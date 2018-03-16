@@ -30,6 +30,14 @@ export class GamesIndexContainerComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.onLoad();
+  }
+
+  onSearch(searchValue) {
+    this.store.dispatch(new gamesActions.SearchGame(searchValue));
+  }
+
+  onLoad() {
     this.store.dispatch(new gamesActions.LoadGames());
   }
 

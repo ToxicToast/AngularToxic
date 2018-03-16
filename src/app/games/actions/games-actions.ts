@@ -4,6 +4,7 @@ export enum GamesActionTypes {
   LOAD_GAMES = '[Blog] Load Games',
   LOAD_GAMES_SUCCESS = '[Blog] Successfully loaded Games',
   LOAD_GAMES_FAILURE = '[Blog] Failed loading Games',
+  SEARCH_GAME = '[Blog] Search Game',
 }
 
 export class LoadGames implements Action {
@@ -20,4 +21,10 @@ export class LoadGamesFailure implements Action {
   constructor(public payload: string) {}
 }
 
-export type GamesActions = LoadGames | LoadGamesSuccess | LoadGamesFailure;
+export class SearchGame implements Action {
+  readonly type = GamesActionTypes.SEARCH_GAME;
+  constructor(public payload: string) {}
+}
+
+export type GamesActions = LoadGames | LoadGamesSuccess | LoadGamesFailure |
+SearchGame;

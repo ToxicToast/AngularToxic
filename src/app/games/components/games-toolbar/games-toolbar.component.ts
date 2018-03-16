@@ -10,6 +10,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class GamesToolbarComponent implements OnInit {
 
   @Input() loaded: boolean;
+  @Output() onSearch = new EventEmitter<string>();
+  @Output() onLoad = new EventEmitter<any>();
 
   gamesForm: FormGroup;
 
@@ -24,8 +26,12 @@ export class GamesToolbarComponent implements OnInit {
 
   searchGame() {
     const game = this.gamesForm.value.search;
-    // emit - searchValue
-    // console.error(game);
+    this.onSearch.emit(game);
+    this.gamesForm.reset();
+  }
+
+  refreshGames() {
+    this.onLoad.emit();
   }
 
   private createForm() {
