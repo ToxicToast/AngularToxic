@@ -81,6 +81,16 @@ export function reducer(state = initialState, action: UsersActions): State {
       });
     }
 
+    case UsersActionTypes.REFRESH_USERS: {
+      return Object.assign({}, state, {
+        loaded: false,
+        loading: true,
+        error: false,
+        errorMessage: '',
+        entities: [],
+      });
+    }
+
     default:
       return state;
   }

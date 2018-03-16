@@ -32,4 +32,11 @@ export class UsersService {
     return this.http.get(url);
   }
 
+  searchUser(data) {
+    const { payload } = data;
+    const endpoint = '/users/search';
+    const url = `${this.baseUrl}${endpoint}`;
+    return this.http.post(url, { data: payload });
+  }
+
 }

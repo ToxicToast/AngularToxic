@@ -34,11 +34,20 @@ export class UsersIndexContainerComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.store.dispatch(new usersActions.LoadUsers());
+    this.onLoad();
   }
 
   onRefresh() {
+    console.error('onRefresh');
     this.store.dispatch(new usersActions.ReloadUsers());
+  }
+
+  onSearch(searchValue) {
+    this.store.dispatch(new usersActions.SearchUser(searchValue));
+  }
+
+  onLoad() {
+    this.store.dispatch(new usersActions.LoadUsers());
   }
 
 }
