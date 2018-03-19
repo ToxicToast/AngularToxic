@@ -26,4 +26,3 @@ else
 		fi
 	done
 fi
-read
