@@ -1,24 +1,16 @@
 #!/bin/bash
-gitLastCommit=$(git show --summary --format="%H")
-if [[ -z "$gitLastCommit" ]]
-then
-	lastCommit=$(git log --format="%H" -n 1)
-else
-	echo "We got a Merge Request!"
-	#take the last commit and take break every word into an array
-	arr=($gitLastCommit)
-	#the 5th element in the array is the commit ID we need. If git log changes, this breaks. :(
-	lastCommit=${arr[4]}
-fi
-echo $lastCommit
+function getLastCommit {
+  gitLastCommit=$(git show --summary --format="%H")
+  echo "Last Commit: $gitLastCommit"
+}
 
-filesChanged=$(git diff-tree --no-commit-id --name-only -r $lastCommit)
-if [ ${#filesChanged[@]} -eq 0 ]; then
+function getChangedFiles {
+  filesChanged=$(git diff-tree -r $gitLastCommit --no-commit-id --name-only)
+  if [ ${#filesChanged[@]} -eq 0 ]; then
     echo "No files to update"
-else
-    for f in $filesChanged
+  else
+  for f in $filesChanged
 	do
-		#do not upload these files that aren't necessary to the site
 		if [ "$f" != ".travis.yml" ] && [ "$f" != "package.json" ]
 		then
 	 		echo "Uploading $f"
@@ -26,3 +18,15 @@ else
 		fi
 	done
 fi
+}
+
+function getCredentials {
+  echo "FTP USER: $FTP_USER"
+  echo "ON: ftp.strato.de"
+}
+
+getLastCommit
+getChangedFiles
+getCredentials
+
+read
