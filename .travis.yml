@@ -22,12 +22,3 @@ after_success:
 cache:
   directories:
     - node_modules
-
-deploy:
-  provider: "ftp"
-  host: "ftp://ftp.strato.de"
-  user: $FTP_USER
-  password: $FTP_PASS
-  skip_cleanup: true
-  on:
-    branch: dev
