@@ -24,7 +24,7 @@ cache:
     - node_modules
 
 deploy:
-  provider: ftp
+  provider: "ftp"
   host: "ftp://ftp.strato.de"
   user: $FTP_USER
   password: $FTP_PASS
