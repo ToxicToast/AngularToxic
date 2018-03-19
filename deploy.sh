@@ -1,5 +1,5 @@
 #!/bin/bash
-gitLastCommit=$(git show --summary --grep="Merge pull request")
+gitLastCommit=$(git show --summary)
 if [[ -z "$gitLastCommit" ]]
 then
 	lastCommit=$(git log --format="%H" -n 1)
