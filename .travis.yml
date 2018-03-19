@@ -10,14 +10,14 @@ before_install:
   - chmod +x deploy.sh
 
 before_script:
-  - npm install -g @angular/cli
+  - npm install -g --silent @angular/cli
 
 script:
   - ng lint
   - ng build --prod --aot --no-progress
 
 after_success:
-  - ./deploy.sh
+  -  curl --ftp-create-dirs -u $FTP_USER:$FTP_PASS ftp://ftp.strato.de
 
 cache:
   directories:
