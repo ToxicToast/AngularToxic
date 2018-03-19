@@ -53,4 +53,4 @@ export class SearchUser implements Action {
 
 export type UsersActions = LoadUsers | LoadUsersSuccess | LoadUsersFailure |
 LoadUser| LoadUserSuccess | LoadUserFailure |
-SearchUser;
+SearchUser | ReloadUsers;

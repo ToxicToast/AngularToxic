@@ -23,7 +23,7 @@ import { UsersProfileComponent } from '@users/components/users-profile/users-pro
 import { UserAchievementsComponent } from '@users/components/user-achievements/user-achievements.component';
 import { UsersStreamComponent } from '@users/components/users-stream/users-stream.component';
 import { UsersGroupsComponent } from '@users/components/users-groups/users-groups.component';
-import { UsersToolbarComponent } from './Components/users-toolbar/users-toolbar.component';
+import { UsersToolbarComponent } from '@users/components/users-toolbar/users-toolbar.component';
 
 @NgModule({
   imports: [

@@ -16,7 +16,7 @@ import { GamesRoutingModule } from '@games/games-routing.module';
 import { GamesIndexContainerComponent } from '@games/containers/games-index-container/games-index-container.component';
 import { GamesListComponent } from '@games/components/games-list/games-list.component';
 import { GamesToolbarComponent } from '@games/components/games-toolbar/games-toolbar.component';
-import { GamesIndexLayoutComponent } from './Containers/games-index-layout/games-index-layout.component';
+import { GamesIndexLayoutComponent } from '@games/containers/games-index-layout/games-index-layout.component';
 
 @NgModule({
   imports: [
