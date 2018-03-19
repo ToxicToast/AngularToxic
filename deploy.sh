@@ -1,5 +1,5 @@
 #!/bin/bash
-gitLastCommit=$(git show --summary)
+gitLastCommit=$(git show --summary --format="%H")
 if [[ -z "$gitLastCommit" ]]
 then
 	lastCommit=$(git log --format="%H" -n 1)
@@ -26,3 +26,4 @@ else
 		fi
 	done
 fi
+read

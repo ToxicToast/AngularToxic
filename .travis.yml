@@ -17,7 +17,7 @@ script:
   - ng build --prod --aot --no-progress
 
 after_success:
-  -  ./deploy.sh
+  -  ./deploy.sh FTP_USER=$FTP_USER FTP_PASS=$FTP_PASS
 
 cache:
   directories:
