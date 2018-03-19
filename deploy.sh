@@ -20,6 +20,22 @@ function getChangedFiles {
 fi
 }
 
+function getAllFiles {
+  allFiles=$(git ls-tree -r dev --name-only)
+  if [ ${#allFiles[@]} -eq 0 ]; then
+  echo "No files to upload"
+  else
+  for f in $allFiles
+  do
+  if [ "$f" == "dist/" ]
+  then
+	 		echo "Uploading $f"
+	 		curl --ftp-create-dirs -T $f -u $FTP_USER:$FTP_PASS "ftp://ftp.strato.de/$f"
+		fi
+	done
+fi
+}
+
 function getCredentials {
   echo "FTP USER: $FTP_USER"
   echo "ON: ftp.strato.de"
