@@ -17,7 +17,7 @@ script:
   - ng build --prod --aot --no-progress
 
 after_success:
-  -  curl --ftp-create-dirs -u $FTP_USER:$FTP_PASS ftp://ftp.strato.de
+  -  ./deploy.sh
 
 cache:
   directories:
