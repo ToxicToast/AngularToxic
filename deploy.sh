@@ -43,5 +43,3 @@ function getCredentials {
 
 getLastCommit
 getAllFiles
-
-read
