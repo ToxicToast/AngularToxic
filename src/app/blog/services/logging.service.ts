@@ -29,7 +29,11 @@ export class LoggingService {
 
   private getUserId() {
     const storage = new SessionStorage('userId');
-    return storage.getItem();
+    if (storage.hasItem()) {
+      return storage.getItem();
+    } else {
+      return 0;
+    }
   }
 
 }

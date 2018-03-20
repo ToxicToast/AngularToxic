@@ -1,0 +1,14 @@
+<div class="toolbar-custom" *ngIf="loaded">
+    <form class="float-left cold-12 col-sm-6 p-l-0 p-r-10" [formGroup]="gamesForm">
+        <div class="form-group input-icon-right">
+            <i class="fa fa-search"></i>
+            <input type="text" class="form-control search-game" placeholder="Search Game..." formControlName="search">
+        </div>
+    </form>
+    <div class="dropdown float-left">
+        <button type="button" class="btn btn-default" (click)="searchGame()" [disabled]="!gamesForm.valid">Search Game</button>
+        <button type="button" class="btn btn-default btn-icon btn-sm m-r-10 hidden-xs-down" (click)="refreshGames()">
+            <i class="fa fa-refresh"></i>
+        </button>
+    </div>
+</div>

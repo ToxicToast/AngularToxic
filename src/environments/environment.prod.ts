@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
   api: {
-    blog: 'http://api.toxictoast.de',
+    blog: 'http://newapi.toxictoast.de',
     youtube: ''
   }
 };

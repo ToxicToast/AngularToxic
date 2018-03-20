@@ -1,0 +1,6 @@
+<section class="p-t-30" *ngIf="loaded">
+    <div class="container">
+        <toxic-games-toolbar [loaded]="loaded" (onSearch)="onSearch.emit($event)" (onLoad)="onLoad.emit()"></toxic-games-toolbar>
+        <toxic-games-list [loaded]="loaded" [games]="games"></toxic-games-list>
+    </div>
+</section>

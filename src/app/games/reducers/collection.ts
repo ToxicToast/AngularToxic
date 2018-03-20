@@ -1,4 +1,4 @@
-import { BlogActionTypes, BlogActions } from '@blog/actions/blog-actions';
+import { GamesActionTypes, GamesActions } from '@games/actions/games-actions';
 
 export interface State {
   loaded: boolean;
@@ -15,47 +15,37 @@ const initialState: State = {
   error: false,
   errorMessage: '',
   entities: [],
-  entity: []
+  entity: [],
 };
 
-export function reducer(state = initialState, action: BlogActions): State {
+export function reducer(state = initialState, action: GamesActions): State {
   switch (action.type) {
-    case BlogActionTypes.LOAD_COMMENTS: {
+    case GamesActionTypes.LOAD_GAMES: {
       return Object.assign({}, state, {
-        loaded: false,
         loading: true,
+        loaded: false,
         error: false,
-        entities: []
+        errorMessage: '',
       });
     }
 
-    case BlogActionTypes.LOAD_COMMENTS_SUCCESS: {
+    case GamesActionTypes.LOAD_GAMES_SUCCESS: {
       return Object.assign({}, state, {
-        loaded: true,
         loading: false,
-        error: false,
+        loaded: true,
         entities: action.payload
       });
     }
 
-    case BlogActionTypes.LOAD_COMMENTS_FAILURE: {
+    case GamesActionTypes.LOAD_GAMES_FAILURE: {
       return Object.assign({}, state, {
-        loaded: true,
         loading: false,
+        loaded: true,
         error: true,
         errorMessage: action.payload,
-        entities: []
       });
     }
 
-    case BlogActionTypes.REFRESH_COMMENTS: {
-      return Object.assign({}, state, {
-        loaded: false,
-        loading: true,
-        error: false,
-        entities: []
-      });
-    }
     default:
       return state;
   }

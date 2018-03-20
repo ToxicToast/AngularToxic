@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
+import { UserModel } from '@users/models/user.model';
+
 import { Store } from '@ngrx/store';
 
 import * as fromUsers from '@users/reducers/index';
@@ -18,7 +20,7 @@ export class UsersIndexContainerComponent implements OnInit {
   loaded$: Observable<boolean>;
   error$: Observable<boolean>;
   errorMessage$: Observable<string>;
-  users$: Observable<any[]>;
+  users$: Observable<UserModel[]>;
 
   constructor(
     private store: Store<fromUsers.State>,
@@ -32,11 +34,20 @@ export class UsersIndexContainerComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.store.dispatch(new usersActions.LoadUsers());
+    this.onLoad();
   }
 
   onRefresh() {
+    console.error('onRefresh');
     this.store.dispatch(new usersActions.ReloadUsers());
+  }
+
+  onSearch(searchValue) {
+    this.store.dispatch(new usersActions.SearchUser(searchValue));
+  }
+
+  onLoad() {
+    this.store.dispatch(new usersActions.LoadUsers());
   }
 
 }

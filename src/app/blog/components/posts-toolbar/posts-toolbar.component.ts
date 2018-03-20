@@ -15,7 +15,7 @@ export class PostsToolbarComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   onClickedCategory(categoryId) {
     this.clickedCategory.emit(categoryId);

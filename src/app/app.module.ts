@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,6 +17,7 @@ import { CoreModule } from '@core/core.module';
 import { BlogModule } from '@blog/blog.module';
 import { AuthModule } from '@auth/auth.module';
 import { UsersModule } from '@users/users.module';
+import { GamesModule } from '@games/games.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,6 +37,8 @@ const RouterProvider = { provide: RouterStateSerializer, useClass: CustomRouterS
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     StoreRouterConnectingModule.forRoot({ stateKey: 'router' }),
@@ -45,7 +48,7 @@ const RouterProvider = { provide: RouterStateSerializer, useClass: CustomRouterS
     BlogModule,
     AuthModule,
     UsersModule,
-    ReactiveFormsModule
+    GamesModule
   ],
   providers: [
     RouterProvider,

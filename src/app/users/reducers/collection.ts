@@ -37,7 +37,7 @@ export function reducer(state = initialState, action: UsersActions): State {
         loading: false,
         error: false,
         errorMessage: '',
-        entities: action.payload.data,
+        entities: action.payload,
       });
     }
 
@@ -67,7 +67,7 @@ export function reducer(state = initialState, action: UsersActions): State {
         loading: false,
         error: false,
         errorMessage: '',
-        entity: action.payload.data
+        entity: action.payload
       });
     }
 
@@ -78,6 +78,16 @@ export function reducer(state = initialState, action: UsersActions): State {
         error: true,
         errorMessage: action.payload,
         entity: {}
+      });
+    }
+
+    case UsersActionTypes.REFRESH_USERS: {
+      return Object.assign({}, state, {
+        loaded: false,
+        loading: true,
+        error: false,
+        errorMessage: '',
+        entities: [],
       });
     }
 

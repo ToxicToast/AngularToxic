@@ -7,7 +7,7 @@ export class UserModel {
   date: string;
   role: string;
   comments: number;
-  groups: GroupModel[];
+  groups?: GroupModel[];
   image: string;
   hero: string;
   streams: number;

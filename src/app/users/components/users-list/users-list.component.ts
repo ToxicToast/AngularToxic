@@ -14,6 +14,7 @@ export class UsersListComponent implements OnInit {
   @Input() error: boolean;
   @Input() errorMessage: string;
   @Output() eventRefresh = new EventEmitter<any>();
+  @Output() eventSearch = new EventEmitter<string>();
 
   breadcrumbs = [];
   private breadcrumbsAdded = false;
@@ -28,7 +29,12 @@ export class UsersListComponent implements OnInit {
   }
 
   refreshList() {
+    console.error('refreshList');
     this.eventRefresh.emit();
+  }
+
+  onSearch(searchValue) {
+    this.eventSearch.emit(searchValue);
   }
 
   getUserColor(role) {

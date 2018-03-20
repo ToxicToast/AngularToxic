@@ -9,7 +9,8 @@ export enum UsersActionTypes {
   LOAD_USER_SUCCESS = '[Blog] Successfully loaded User',
   LOAD_USER_FAILURE = '[Blog] Failed loading User',
 
-  REFRESH_USERS = '[Blog] Reload Users'
+  REFRESH_USERS = '[Blog] Reload Users',
+  SEARCH_USERS = '[Blog] Search Users'
 }
 
 export class ReloadUsers implements Action {
@@ -45,5 +46,11 @@ export class LoadUserFailure implements Action {
   constructor(public payload: string) {}
 }
 
+export class SearchUser implements Action {
+  readonly type = UsersActionTypes.SEARCH_USERS;
+  constructor(public payload: string) {}
+}
+
 export type UsersActions = LoadUsers | LoadUsersSuccess | LoadUsersFailure |
-LoadUser| LoadUserSuccess | LoadUserFailure;
+LoadUser| LoadUserSuccess | LoadUserFailure |
+SearchUser | ReloadUsers;

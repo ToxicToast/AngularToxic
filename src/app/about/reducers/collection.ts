@@ -33,7 +33,7 @@ export function reducer(state = initialState, action: AboutAction): State {
       return Object.assign({}, state, {
         loaded: true,
         loading: false,
-        entities: action.payload.data,
+        entities: action.payload,
       });
     }
 

@@ -1,5 +1,3 @@
-{{ user | json }}
-
 <section class="hero hero-profile" [style]="getBackground(user.hero)" *ngIf="loaded && user.role !== 'Banned'">
     <div class="overlay"></div>
     <div class="container">
@@ -30,6 +28,9 @@
                 <li [class]="checkActiveClass('toasts')">
                     <a (click)="changeView('toasts')">Toasts ({{ user.toasts }})</a>
                 </li>
+                <li [class]="checkActiveClass('chatlines')">
+                    <a (click)="changeView('chatlines')">Chatlines ({{ user.chatlines }})</a>
+                </li>
             </ul>
         </div>
     </section>
@@ -41,6 +42,20 @@
                 <div class="widget widget-about">
                     <h5 class="widget-title">About {{ user.username }}</h5>
                     <p [innerHTML]="user.about"></p>
+                    <ul>
+                        <li>
+                            <i class="fa fa-clock-o"></i>
+                            Joined MONTH YEAR
+                        </li>
+                        <li>
+                            <i class="fa fa-user"></i>
+                            ROLE
+                        </li>
+                        <li>
+                                <i class="fa fa-twitch"></i>
+                                0 Followers
+                            </li>
+                    </ul>
                 </div>
             </div>
             <div class="col-lg-9">

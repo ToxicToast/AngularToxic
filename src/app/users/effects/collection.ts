@@ -43,4 +43,18 @@ export class CollectionEffects {
   .catch(err => of(new LoadUserFailure(err)))
   );
 
+  @Effect()
+  refreshUser$ = this.actions.ofType(collection.UsersActionTypes.REFRESH_USERS)
+  .switchMap(() => this.service.getUsers()
+  .map(data => new LoadUsersSuccess(data))
+  .catch(err => of(new LoadUsersFailure(err)))
+  );
+
+  @Effect()
+  searchUser$ = this.actions.ofType(collection.UsersActionTypes.SEARCH_USERS)
+  .switchMap(payload => this.service.searchUser(payload)
+  .map(data => new LoadUsersSuccess(data))
+  .catch(err => of(new LoadUsersFailure(err)))
+  );
+
 }
